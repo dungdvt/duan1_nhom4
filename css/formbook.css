@@ -1,0 +1,89 @@
+
+    /* Style the main container */
+    .form-content {
+        margin: 20px auto;
+        width: 80%;
+        max-width: 600px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-content p {
+        text-align: center;
+        font-size: 12px
+    }
+
+    .form-content h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    .form-content form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-content label {
+        font-weight: bold;
+
+
+
+    }
+
+    .form-content select,
+    input[type="date"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .form-content #danhSachCaVaStylistWrapper {
+        display: none;
+    }
+
+    .form-content  #danhSachCa {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+
+.form-content .ca {
+        flex: 0 0 calc(50% - 10px);
+        background-color: #f4f4f4;
+        padding: 15px;
+        border-radius: 4px;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .form-content .ca:hover {
+        background-color: #ddd;
+    }
+
+    .form-content  .ca.chon {
+        background-color: #4caf50;
+        color: #fff;
+    }
+
+    .form-content input[type="submit"] {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .form-content input[type="submit"]:hover {
+        background-color: #45a049;
+    }

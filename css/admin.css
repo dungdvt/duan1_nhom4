@@ -1,0 +1,126 @@
+/* *{
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    font-family: segoe ui,sans-serif;
+    width: 100%;
+    
+}
+h1{
+    color: #fff;
+    background-color: bisque;
+}
+main{
+    display: inline-block;
+}
+.menu{
+    background-color: aqua;
+}
+.boxright{
+    background-color: blueviolet;
+} */
+*{
+    box-sizing: border-box;
+}
+body{
+
+    margin: 0;
+    padding: 0;
+}
+.container{
+    font-family: segoe ui,sans-serif;
+    width: 90%;
+    margin: 0 auto;
+    background-color: antiquewhite;
+    
+}
+
+main {
+    display: flex;
+    flex: 1;
+}
+h1{
+    margin: 0;
+   
+    padding: 10px;
+    background-color: chocolate;
+}
+.menu {
+    width: 25%;
+    background-color: #515050;
+    color: #fff;
+    padding-bottom: 200px;
+}
+
+.menu ul {
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.menu ul li {
+    border-bottom: 1px solid ;
+    padding: 20px 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 20px;
+    
+   
+}
+.menu ul li:hover {
+    cursor: pointer;
+    background-color: rgb(138, 138, 138);
+    color: #fff;
+}
+
+
+.boxright {
+    flex: 1;
+    padding: 20px;
+}
+/* table */
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+
+}
+.table.loai th, .table.loai td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+.table.loai th {
+    background-color: chocolate;
+    color: white;
+}
+.btn{
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid white;
+    background-color: bisque;
+    margin-top: 10px;
+    padding: 5px 15px;
+}
+/* form */
+form label,
+form input {
+    display: block;
+    margin-bottom: 10px;
+    
+}
+input[type="text"] {
+    width: 100%; /* Đặt chiều rộng theo ý muốn */
+    padding: 5px; /* Tùy chỉnh lề bên trong input */
+    font-size: 16px;
+}

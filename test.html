@@ -1,0 +1,7 @@
+SELECT name, COUNT(name) FROM dichvu 
+GROUP BY name 
+ORDER BY COUNT(name) DESC LIMIT 1;
+
+SELECT id_nhanvien, COUNT(id_nhanvien) FROM datlich 
+GROUP BY id_nhanvien 
+ORDER BY COUNT(id_nhanvien) DESC LIMIT 1;

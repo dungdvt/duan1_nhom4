@@ -1,0 +1,607 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+   
+    height: auto;
+    background: linear-gradient(45deg, #ff5e00, #e2e2e2, rgb(103, 113, 255), #ced800);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+}
+@keyframes color{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+.container{
+    font-family: segoe ui,sans-serif;
+    width: 80%;
+    margin: 150px auto;
+    
+}
+
+.header{
+    border: 1px solid white;
+    display: flex;
+    background-color: black;
+    align-items: center;
+    width: 100%;
+    position: fixed; /* Tạo vị trí cố định cho header */
+    top: 0; /* Đặt header ở đỉnh trang */
+    left: 0;
+    justify-content: space-between;
+    padding: 10px;
+    z-index: 1000; /* Đặt độ ưu tiên Z cho header cao hơn banner */
+}
+.logo{
+    flex: 1; 
+max-width: 300px;
+}
+.logo img {
+    max-width: 150px; /* Điều chỉnh kích thước của logo */
+}
+.menu{
+    flex: 1;
+
+}
+.header ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+}
+.header ul li{
+
+    padding: 25px 0;
+    font-size: 17px;
+    display: inline;
+    margin: 0 50px;
+
+}
+.header ul li a{
+    
+    text-decoration: none;
+    color: #ffffff;
+   
+}
+.header ul li a:hover{
+    text-decoration: underline;
+    text-decoration-color: goldenrod;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px; 
+    text-decoration-skip-ink: auto;
+    cursor: pointer;
+}
+   /* menu con  */
+   .dropdown {
+    position: relative;
+    display: inline-block;
+  
+    
+}
+.row{
+
+    color: #fff;
+}
+.dropdown-content {
+   
+    margin: 35px 0;
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    border: 1px solid white;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    
+}
+
+/* Điều chỉnh giao diện của menu con */
+.dropdown-content a {
+   
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.dangnhap{
+    max-width: 200px;
+    flex: 1;
+    justify-content: flex-end; 
+}
+.dangnhap input[type="submit"],
+.form-datlich input[type="submit"]
+{
+
+    padding: 10px 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgba(0, 123, 255, 0);
+    color: white;
+    font-size: 17px;
+}
+.dangnhap input[type="submit"]:hover{
+    background-color: goldenrod;
+    cursor: pointer;
+}
+.slideshow{
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+    border-radius: 30px;
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+}
+.slideshow img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.banner {
+    width: 100%;
+    min-width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    height: 300px;
+}
+
+.pre,
+.next {
+    background-color: black;
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    color: rgb(61, 61, 61);
+    font-weight: bold;
+    opacity: 0.5;
+    font-size: 18px;
+    transition: 0.6s ease-in-out;
+    border-radius: 0 3px 3px 0;
+    border: none;
+
+}
+
+.pre:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.pre {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+
+.form-datlich{
+    background-color:goldenrod;
+    width: 50%;
+    padding: 20px;
+    align-items: center;
+    border-radius: 20px;
+    margin: 0 auto;
+    box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
+.h1{
+    color: rgb(0, 0, 0);
+    margin: 10px 0;
+}
+.form-datlich input[type="submit"]{
+    width: 73%;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    
+}
+.form-datlich input[type="submit"]:hover{
+    background-color: rgb(0, 0, 0);
+    opacity: 0.5;
+    cursor: pointer;
+}
+.content{
+    /* border: 1px solid black; */
+    margin: 20px 170px;
+  
+
+}
+.box-content {
+    display: flex; /* Sử dụng Flexbox để chia các phần tử thành hàng ngang */
+    justify-content: space-between; /* Để có khoảng cách đều nhau giữa các .box-pr */
+    flex-wrap: wrap;
+}
+.product {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+.box-pr {
+    box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5); /* Thêm đổ bóng cho hộp */
+    position: relative;
+    border-radius: 20px;
+   background-color: white;
+    overflow: hidden;
+    padding-bottom: 10px;
+    width: 50%;
+    margin: 15px;
+    width: calc(33.33% - 20px);
+    margin: 10px;
+
+    border: 1px solid #e0e0e0;
+}
+
+.img {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.img:hover img {
+    transform: scale(1.2);
+   
+}
+.h11{
+    text-align: left;
+    margin: 50px 0;
+    color: goldenrod;
+    text-decoration: underline;
+    text-decoration-color: goldenrod;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 10px; 
+    text-decoration-skip-ink: auto;
+}
+h3{
+    color: goldenrod;
+    font-size: 26px;
+
+}
+
+/* Kiểu cho phần "Giá" và liên kết "Tìm hiểu thêm" */
+.price, a{
+    display: inline-block; /* Hiển thị trên cùng một dòng */
+    margin:0 10px; /* Tạo khoảng cách giữa các phần tử */
+
+    font-size: 14px;
+}
+
+/* Kiểu cho liên kết "Tìm hiểu thêm" */
+.chitiet_sp{
+
+}
+.chitiet_sp a {
+    color: goldenrod;
+
+    text-decoration: none;
+}
+footer{
+    width: 100%;
+    left: 0;
+    position: absolute;
+
+    margin: 0 auto;
+    text-align: center;
+}
+.boxfooter{
+padding-bottom: 10xp;
+    background-color: goldenrod;
+}
+
+.thongtin{
+    background-color: rgb(92, 92, 92);
+    padding-bottom: 20px;
+    text-decoration: none;
+    color: #ffffff; 
+}
+.giolamviec{
+
+    padding-top: 10px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.thongtin a{
+    text-decoration: none;
+    color: #ffffff;
+    margin-top: 20px;
+   
+}
+.thongtin a:hover{
+    text-decoration: underline;
+    text-decoration-color: goldenrod;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px; 
+    text-decoration-skip-ink: auto;
+    cursor: pointer;
+}
+.copyright{
+    background-color: goldenrod;
+    padding: 10px 0;
+    color: black;
+
+}
+/* chitietdichvu */
+.service-details {
+    display: flex;
+    margin: 20px 0;
+    padding: 50px 20px;
+    background-color: rgba(214, 214, 214, 1);
+}
+
+.service-image {
+    flex: 1;
+    padding: 10px;
+}
+
+.service-image img {
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.service-description {
+    flex: 2;
+    padding: 10px;
+}
+
+.service-description h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.service-description .gia {
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.5;
+    font-weight: 500;
+    color: goldenrod;
+}
+.service-description p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgb(0, 0, 0);
+}
+.btn {
+    margin: 50px 460px;
+}
+.btn input[type="submit"]:hover{
+    background-color: goldenrod;
+    cursor: pointer;
+}
+.btn  input[type="submit"]{
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgba(0, 123, 255, 0);
+    color: white;
+    font-size: 17px;
+}
+/* Chon ca */
+.nut{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Hai cột */
+    gap: 10px; 
+}
+h1 {
+    grid-column: span 2; /* Dãy ngang 2 cột */
+    text-align: center;
+    color: goldenrod;
+}
+.room-button {
+    padding: 20px;
+    background-color: goldenrod;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+   
+}
+.selected-room {
+    background-color: green; /* Màu nền của phòng đã chọn */
+}
+.mota{
+    color: black;
+}
+/* Lịch sử đặt lịch */
+.history-table{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px 20px;
+    margin-bottom: 100px;
+}
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    text-align: center;
+
+}
+.table th{
+    border: 1px solid #000000;
+    padding: 8px;
+    background-color: goldenrod;
+  
+}
+.table td{
+    border: 1px solid #000000;
+    padding: 8px;
+}
+/* Sau khi đăng nhập  */
+.row{
+          
+}
+.user-dropdown {
+    
+    display: inline-block;
+    position: relative;
+    margin-right:50px;
+}
+
+.user-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    
+}
+.user-dropdown-content li a{
+    text-decoration: none;
+}
+.user-dropdown-content li{
+list-style-type: none;
+}
+.user-dropdown-content li:hover{
+    background-color: antiquewhite;
+}
+.user-dropdown:hover .user-dropdown-content {
+    display: block;
+} 
+/* POPUP đăng nhập */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    background-color: #fff;
+    padding: 30px 100px;
+    border-radius: 5px;
+    text-align:center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.close-btn {
+
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    /* Đặt màu trắng cho nút "X" */
+    font-size: 34px;
+    /* Đặt kích thước cho nút "X" */
+    background-color: transparent;
+    /* Đặt màu nền trong suốt */
+    border: none;
+}
+
+.login-container form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Định dạng cho các trường đầu vào */
+.login-container form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Định dạng cho nút đăng nhập */
+.login-container form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-container form button:hover {
+    background-color: #0056b3;
+}
+
+/* Định dạng cho liên kết quên mật khẩu */
+.login-container form a {
+    display: block;
+    text-align: right;
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+/* Định dạng cho liên kết quên mật khẩu khi di chuột qua */
+.login-container form a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+.login-container form a {
+    display: block;
+    text-align: right;
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.login-container form a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Định dạng cho liên kết đăng kí */
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}

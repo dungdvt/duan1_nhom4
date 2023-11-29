@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <style>
+        .banner {
+            width: 100%;
+            min-width: 300px;
+            text-align: center;
+            position: relative;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 300px;
+        }
+
+        .pre,
+        .next {
+            background-color: black;
+            cursor: pointer;
+            position: absolute;
+            top: 40%;
+            width: auto;
+            padding: 16px;
+            color: rgb(61, 61, 61);
+            font-weight: bold;
+            opacity: 0.5;
+            font-size: 18px;
+            transition: 0.6s ease-in-out;
+            border-radius: 0 3px 3px 0;
+            border: none;
+
+        }
+
+        .pre:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .pre {
+            left: 0;
+            border-radius: 0 3px 3px 0;
+        }
+ 
+    </style>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="logo">
+                <a href=""><img src="image/dichvu/logo.png"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Dịch vụ</a>
+                        <div class="dropdown-content">
+                            <a href="#">Menu Con 1</a>
+                            <a href="#">Menu Con 2</a>
+                            <a href="#">Menu Con 3</a>
+                        </div>
+                    </li>
+                    <li><a href="">Giới thiệu</a></li>
+                    <li><a href="">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="dangnhap">
+                <input type="submit" value="Đăng nhập">
+            </div>         
+        </div>
+        <!-- <div class="modal">
+            <div class="modal-inner">
+                <div class="header1">
+                    <h1>Đăng nhập</h1>
+                    <p>Mời anh chị nhập số điện thoại</p>
+                </div>
+                <form action="" method="post">
+                    <input type="text" value="" placeholder="Ví dụ: 0988.xxx.xxx">
+                    <input type="submit" value="Tiếp tục">
+                </form>
+            </div>
+        </div> -->
+        <!-- END HEADER -->
+        <main>
+        <div class="slideshow">
+            <div class="banner" style="">
+                <img id="banner" src="./image/img2.png" alt="">
+                <button class="pre" onclick="pre()">&#10094;</button>
+                <button class="next" onclick="next()">&#10095;</button>
+            </div>
+
+        </div>
+        <div class="form-datlich" >
+            <form action="" method="post">
+            <h2 class="h1">Đặt lịch giữ chỗ chỉ 30 giây</h2>
+            <p class="h1">Cắt xong trả tiền, hủy lịch không sao</p>
+            <input type="text" name="" id="" placeholder="Nhập số điện thoại để đặt lịch">
+            <input type="submit" name="" value="Đặt lịch ngay" id="">
+        </form>
+        </div>
+
+        <div class="content">
+            <h1 class="h11">Dịch vụ</h1>
+            <div class="box-content">
+                <div class="box-pr">
+                    <div class="img">
+                        <img src="image/dichvu/images.jfif" alt="">
+                    </div>
+
+                    <h3>Cắt tóc</h3>
+                    <div class="chitiet_sp">
+                        <p class="price">Giá từ 70đ</p>
+                        <a href="">Tìm hiểu thêm<i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="box-pr">
+                    <div class="img">
+                        <img src="image/dichvu/images.jfif" alt="">
+                    </div>
+
+                    <h3>Cắt tóc</h3>
+                    <div class="chitiet_sp">
+                        <p class="price">Giá từ 70đ</p>
+                        <a href="">Tìm hiểu thêm<i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="box-pr">
+                    <div class="img">
+                        <img src="image/dichvu/images.jfif" alt="">
+                    </div>
+
+                    <h3>Cắt tóc</h3>
+                    <div class="chitiet_sp">
+                        <p class="price">Giá từ 70đ</p>
+                        <a href="">Tìm hiểu thêm<i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="box-pr">
+                    <div class="img">
+                        <img src="image/dichvu/images.jfif" alt="">
+                    </div>
+
+                    <h3>Cắt tóc</h3>
+                    <div class="chitiet_sp">
+                        <p class="price">Giá từ 70đ</p>
+                        <a href="">Tìm hiểu thêm<i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="box-pr">
+                    <div class="img">
+                        <img src="image/dichvu/images.jfif" alt="">
+                    </div>
+
+                    <h3>Cắt tóc</h3>
+                    <div class="chitiet_sp">
+                        <p class="price">Giá từ 70đ</p>
+                        <a href="">Tìm hiểu thêm<i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="box-pr">
+                    <div class="img">
+                        <img src="image/dichvu/images.jfif" alt="">
+                    </div>
+
+                    <h3>Cắt tóc</h3>
+                    <div class="chitiet_sp">
+                        <p class="price">Giá từ 70đ</p>
+                        <a href="">Tìm hiểu thêm<i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        <h1 class="h11">Spa - Phê pha</h1>
+            <div class="box-content">
+                <div class="box-pr">
+                    <div class="img">
+                        <img src="image/dichvu/images.jfif" alt="">
+                    </div>
+
+                    <h3>Cắt tóc</h3>
+                    <div class="chitiet_sp">
+                        <p class="price">Giá từ 70đ</p>
+                        <a href="">Tìm hiểu thêm<i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="box-pr">
+                    <div class="img">
+                        <img src="image/dichvu/images.jfif" alt="">
+                    </div>
+
+                    <h3>Cắt tóc</h3>
+                    <div class="chitiet_sp">
+                        <p class="price">Giá từ 70đ</p>
+                        <a href="">Tìm hiểu thêm<i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="box-pr">
+                    <div class="img">
+                        <img src="image/dichvu/images.jfif" alt="">
+                    </div>
+
+                    <h3>Cắt tóc</h3>
+                    <div class="chitiet_sp">
+                        <p class="price">Giá từ 70đ</p>
+                        <a href="">Tìm hiểu thêm<i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="box-pr">
+                    <div class="img">
+                        <img src="image/dichvu/images.jfif" alt="">
+                    </div>
+
+                    <h3>Cắt tóc</h3>
+                    <div class="chitiet_sp">
+                        <p class="price">Giá từ 70đ</p>
+                        <a href="">Tìm hiểu thêm<i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+     <!-- <footer>-->
+        <footer>
+            <div class="boxfooter">
+                <div class="thongtin">
+                    <a href="">Về chúng tôi</a>
+                    <a href="">Dịch vụ</a>
+                    <a href="">Chính sách bảo mật</a>
+                </div>
+                <div class="giolamviec">
+                    <p>Giờ phục vụ:
+                        8h30 - 20h30 (Thứ 2-Chủ nhật)</p>
+                    <p>Hotline (1000đ/phút):1900.27.27.03</p>
+                    <p>Liên hệ học nghề tóc:0967.86.3030</p>
+                    <a href="" class="thongtin">Liên hệ quảng cáo</a>
+                </div>
+
+            </div>
+            <div class="copyright">
+                <p>Copyright © 2023 HuyHTML. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        var album=[];
+for(var i=1;i<6;i++){
+    album[i]=new Image();
+    album[i].src="./image/img"+i+".png";
+}
+ var interval=setInterval(slideshow,2000);
+index=0;
+function slideshow(){
+    index++;
+    if(index>4){
+        index=0;
+    }
+    document.getElementById("banner").src=album[index].src;
+   
+    
+}
+function next(){
+    index++;
+    if(index>4){
+        index=0;
+    }
+    document.getElementById("banner").src=album[index].src;
+   
+}
+function pre(){
+    index--;
+    if(index<0){
+        index=4;
+    }
+    document.getElementById("banner").src=album[index].src;
+   
+}
+
+    </script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

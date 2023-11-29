@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form đặt lịch</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/formbook.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <div class="logo">
+                <a href=""><img src="image/dichvu/logo.png" width="150px"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="dsdichvu.html">Dịch vụ</a></li>
+                    <li><a href="">Giới thiệu</a></li>
+                    <li><a href="">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="dangnhap">
+                <input type="submit" value="Đăng nhập">
+            </div>
+        </div>
+
+        <!-- END HEADER -->
+
+        <main class="form-content">
+            <h1>Đặt lịch giữ chỗ</h1>
+            <form action="" method="post">
+                <label for="dichvu">Chọn dịch vụ</label>
+                <!-- Thay input type="text" thành select -->
+                <select name="dichvu" id="dichvu">
+                    <!-- Thêm các option cho các dịch vụ -->
+                    <option value="dichvu1">Dịch vụ 1</option>
+                    <option value="dichvu2">Dịch vụ 2</option>
+                    <option value="dichvu3">Dịch vụ 3</option>
+                </select>
+                <label for="ngay">Chọn ngày</label>
+                <input type="date" id="ngay" name="ngay" onchange="hienThiDanhSachCa()" onkeydown="return false" >
+                <!-- <div id="selectedDateErrorMessage">Ngày bạn chọn không hợp lệ, hãy chọn ngày khác!</div> -->
+                <div id="danhSachCaVaStylistWrapper">
+                    <label for="">Chọn stylist</label>
+                    <select name="stylist" id="stylist">
+                        <option value="1">Nguyễn Quang Huy</option>
+                        <option value="2">Binz</option>
+                        <option value="3">Giàng A Phò</option>
+                    </select>
+                    <label for="">Chọn giờ</label>
+                    <div id="danhSachCa" class="hang-ngang">
+                        <!-- Danh sách ca sẽ được hiển thị ở đây -->
+                        <div class="ca" onclick="chonCa(this)">Ca 1</div>
+                        <div class="ca" onclick="chonCa(this)">Ca 2</div>
+                        <div class="ca" onclick="chonCa(this)">Ca 3</div>
+                        <div class="ca" onclick="chonCa(this)">Ca 4</div>
+                        <div class="ca" onclick="chonCa(this)">Ca 5</div>
+                        <div class="ca" onclick="chonCa(this)">Ca 6</div>
+                        <div class="ca" onclick="chonCa(this)">Ca 7</div>
+                        <div class="ca" onclick="chonCa(this)">Ca 8</div>
+                        <div class="ca" onclick="chonCa(this)">Ca 9</div>
+                        <div class="ca" onclick="chonCa(this)">Ca 10</div>
+                    </div>
+                </div>
+                <!-- Thêm nút submit cho form -->
+                <input type="submit" value="Đặt lịch">
+                <p>Cắt xong trả tiền, hủy lịch không sao</p>
+            </form>
+        </main>
+        <!-- <footer>-->
+        <footer>
+            <div class="boxfooter">
+                <div class="thongtin">
+                    <a href="">Về chúng tôi</a>
+                    <a href="">Dịch vụ</a>
+                    <a href="">Chính sách bảo mật</a>
+                </div>
+                <div class="giolamviec">
+                    <p>Giờ phục vụ:
+                        8h30 - 20h30 (Thứ 2-Chủ nhật)</p>
+                    <p>Hotline (1000đ/phút):1900.27.27.03</p>
+                    <p>Liên hệ học nghề tóc:0967.86.3030</p>
+                    <a href="" class="thongtin">Liên hệ quảng cáo</a>
+                </div>
+
+            </div>
+            <div class="copyright">
+                <p>Copyright © 2023 HuyHTML. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        // Set min date as today
+        var today = new Date().toISOString().split('T')[0];
+        document.getElementById("ngay").setAttribute('min', today);
+
+        function hienThiDanhSachCa() {
+            // Lấy giá trị ngày tháng từ input
+            var ngayThang = document.getElementById('ngay').value;
+
+            // Thực hiện xử lý logic dựa trên ngày tháng, ví dụ đơn giản:
+            // (Đây là nơi bạn có thể thực hiện các yêu cầu xử lý hoặc truy vấn dữ liệu từ máy chủ)
+
+            // Hiển thị danh sách ca (đây là một ví dụ, bạn có thể thay thế bằng logic thực tế)
+            var danhSachCa = document.getElementById('danhSachCa');
+            danhSachCa.innerHTML = ""; // Xóa nội dung cũ
+
+            // Tạo và thêm các ô ca làm việc vào danh sách
+            for (var i = 1; i <= 10; i++) {
+                var ca = document.createElement('div');
+                ca.className = 'ca';
+                ca.innerText = 'Ca ' + i;
+                ca.onclick = function () {
+                    chonCa(this);
+                };
+                danhSachCa.appendChild(ca);
+            }
+
+            // Hien thi danhSachCaVaStylistWrapper
+            document.getElementById('danhSachCaVaStylistWrapper').style.display = 'block'
+        }
+
+
+
+        // Hàm chọn ca làm việc
+        function chonCa(selectedCa) {
+            // Lấy danh sách tất cả các ô ca làm việc
+            var cas = document.querySelectorAll('.ca');
+
+            // Loại bỏ lớp 'chon' khỏi tất cả các ô ca
+            cas.forEach(function (ca) {
+                ca.classList.remove('chon');
+            });
+
+            // Thêm lớp 'chon' cho ô ca được chọn
+            selectedCa.classList.add('chon');
+        }
+    </script>
+</body>
+
+</html>

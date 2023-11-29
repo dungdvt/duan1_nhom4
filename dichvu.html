@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Admin</h1>
+        <main>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Trang chủ</a></li>
+                    <li><a href="loaidv.html"><i class="fa-solid fa-folder"></i> Loại dịch vụ</a></li>
+                    <li><a href=""><i class="fa-solid fa-gears"></i> Dịch vụ</a></li>
+                    <li><a href=""><i class="fa-solid fa-shop"></i> Nhân viên</a></li>
+                    <li><a href=""><i class="fa-solid fa-user"></i> Khách hàng</a></li>
+                    <li><a href=""><i class="fa-solid fa-chart-simple"></i> Thống kê</a></li>
+                    <li><a href="../index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> Thoát</a></li>
+                </ul>
+            </div>
+            <div class="boxright">
+                <h2>Danh sách dịch vụ</h2>
+                <form action="" method="post">
+                    <input type="text" name="kyw">
+                    <select name="">
+                        <option value="0" selected>All</option>
+                        <option value="">Dịch vụ cắt</option>
+                        <option value="">Dịch vụ uốn</option>
+                    </select>
+                    <input type="submit" name="listok" value="Search">
+                </form>
+                <table class="table loai" border="1">
+                    <tr>
+                        <th>ID</th>
+                        <th>Dịch vụ</th>
+                        <th>Giá</th>
+                        <th>Ảnh</th>
+                        <th>Mô tả</th>
+                        <th>Lượt truy cập</th>
+                        <th>ID Loại</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Combo cắt gội 70k</td>
+                        <td>$ 20</td>
+                        <td><img src="../image/images.jfif" width="100px"></td>
+                        <td> Dịch vụ tạo kiểu tóc chuyên nghiệp của chúng tôi sẽ giúp bạn có một diện mạo mới, phù hợp
+                            với phong cách của bạn. Chúng tôi có đội ngũ nhà tạo mẫu tóc tài năng sẽ tư vấn và thiết kế
+                            kiểu tóc độc đáo cho bạn.</td>
+                        <td>20</td>
+                        <td>1</td>
+                        <td>
+                            <a href=""><input type="button" name="" class="btn" value="Sửa"></a>
+                            <a href=""><input type="button" name="" class="btn" value="Xóa"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Combo cắt gội 70k</td>
+                        <td>$ 20</td>
+                        <td><img src="../image/images.jfif" width="100px"></td>
+                        <td> Dịch vụ tạo kiểu tóc chuyên nghiệp của chúng tôi sẽ giúp bạn có một diện mạo mới, phù hợp
+                            với phong cách của bạn.</td>
+                        <td>20</td>
+                        <td>1</td>
+                        <td>
+                            <a href=""><input type="button" name="" class="btn" value="Sửa"></a>
+                            <a href=""><input type="button" name="" class="btn" value="Xóa"></a>
+                        </td>
+                    </tr>
+                </table>
+                <div class="button">
+                    <a href="formdv.html"><input type="button" name="" class="btn" value="Thêm"></a>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
