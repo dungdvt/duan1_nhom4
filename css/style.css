@@ -23,7 +23,7 @@ body{
 }
 .container{
     font-family: segoe ui,sans-serif;
-    width: 80%;
+    max-width:1280px;
     margin: 150px auto;
     
 }
@@ -41,14 +41,14 @@ body{
     padding: 10px;
     z-index: 1000; /* Đặt độ ưu tiên Z cho header cao hơn banner */
 }
-.logo{
+.header .logo{
     flex: 1; 
 max-width: 300px;
 }
-.logo img {
+.header .logo img {
     max-width: 150px; /* Điều chỉnh kích thước của logo */
 }
-.menu{
+.header .menu{
     flex: 1;
 
 }
@@ -119,12 +119,12 @@ max-width: 300px;
 }
 
 
-.dangnhap{
+.header .dangnhap{
     max-width: 200px;
     flex: 1;
     justify-content: flex-end; 
 }
-.dangnhap input[type="submit"],
+.header .dangnhap input[type="submit"],
 .form-datlich input[type="submit"]
 {
 
@@ -154,19 +154,19 @@ max-width: 300px;
     display: block;
 }
 
-.banner {
+.slideshow .banner {
     width: 100%;
     min-width: 300px;
     text-align: center;
     position: relative;
 }
 
-.banner img {
+.slideshow .banner img {
     width: 100%;
     height: 300px;
 }
 
-.pre,
+.slideshow .pre,
 .next {
     background-color: black;
     cursor: pointer;
@@ -184,17 +184,17 @@ max-width: 300px;
 
 }
 
-.pre:hover,
+.slideshow .pre:hover,
 .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.next {
+.slideshow .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
-.pre {
+.slideshow .pre {
     left: 0;
     border-radius: 0 3px 3px 0;
 }
@@ -233,18 +233,18 @@ max-width: 300px;
   
 
 }
-.box-content {
+.content .box-content {
     display: flex; /* Sử dụng Flexbox để chia các phần tử thành hàng ngang */
     justify-content: space-between; /* Để có khoảng cách đều nhau giữa các .box-pr */
     flex-wrap: wrap;
 }
-.product {
+.content .product {
     width: calc(33.33% - 20px);
     margin: 10px;
     text-align: center;
     border: 1px solid #e0e0e0;
 }
-.box-pr {
+.content .box-pr {
     box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5); /* Thêm đổ bóng cho hộp */
     position: relative;
     border-radius: 20px;
@@ -259,20 +259,20 @@ max-width: 300px;
     border: 1px solid #e0e0e0;
 }
 
-.img {
+.content .img {
     position: relative;
     overflow: hidden;
     transition: transform 0.3s;
 }
 
-.img img {
+.content .img img {
     width: 100%;
     height: auto;
     display: block;
     transition: transform 0.3s;
 }
 
-.img:hover img {
+.content .img:hover img {
     transform: scale(1.2);
    
 }

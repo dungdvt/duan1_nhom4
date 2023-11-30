@@ -5,16 +5,16 @@
     
 /* Form đăng kí */
 
-.box-content{
+.box-content {
 
 }
-.box-right{
+.box-content .box-right{
    text-align: center;
    margin: 40px 0;
    margin: 10px auto;
 
 }
-form {
+.box-content form {
     text-align: left;
     background-color: #fff;
     padding: 20px 40px;
@@ -23,20 +23,20 @@ form {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.h2 {
+.box-content .h2 {
     margin-bottom:20px;
     text-align: center;
     color: goldenrod;
     
 }
 
-label {
+.box-content label {
     display: block;
     margin-top: 10px;
     color: #666;
 }
 
-input {
+.box-content input {
     width: 100%;
     padding: 10px;
     margin-top: 8px;
@@ -47,20 +47,18 @@ input {
     background-color: aliceblue;
 }
 
-input[type="submit"] {
+.box-content input[type="submit"] {
     margin-top: 20px;
     background-color: #4caf50;
     color: #fff;
     cursor: pointer;
 }
 
-input[type="submit"]:hover {
+.box-content input[type="submit"]:hover {
     background-color: #45a049;
 }
 
 </style>
-<body>
-    <div class="container">
         <div class="box-content">
             <div class="box-right">
                 <h1 class="h2">ĐĂNG KÍ THÀNH VIÊN</h1>
@@ -71,23 +69,22 @@ input[type="submit"]:hover {
                             if(isset($thongbao)&&($thongbao!="")){
                                 echo $thongbao;
                             }
-
                         ?>
                         </h2>
                     <label for="fullname">Họ và Tên:</label>
-                    <input type="text" name="name" required>
+                    <input type="text" name="name" >
 
                     <label for="email">Email:</label>
-                    <input type="email"  name="email" required>
+                    <input type="email"  name="email" >
 
                     <label for="phone">Số Điện Thoại:</label>
-                    <input type="tel"  name="sodienthoai" pattern="[0-9]{10}" required>
+                    <input type="tel"  name="sodienthoai" pattern="[0-9]{10}" >
 
                     <label for="username">Tên đăng nhập:</label>
-                    <input type="text"  name="username" required>
+                    <input type="text"  name="username" >
 
                     <label for="password">Mật Khẩu:</label>
-                    <input type="password"  name="password" required>
+                    <input type="password"  name="password">
 
                     <input type="submit" name="dangki" value="Đăng Ký">
                    

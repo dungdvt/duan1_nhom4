@@ -1,5 +1,5 @@
  <!-- <footer>-->
- <footer>
+        <footer>
             <div class="boxfooter">
                 <div class="thongtin">
                     <a href="">Về chúng tôi</a>
@@ -19,7 +19,7 @@
                 <p>Copyright © 2023 HuyHTML. All rights reserved.</p>
             </div>
         </footer>
-    </div>
+</div>
     <script src="../js/app.js"></script>
     <script>
         var album=[];

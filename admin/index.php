@@ -5,16 +5,37 @@ include '../model/loai.php';
 include '../model/dichvu.php';
 include '../model/nhanvien.php';
 include '../model/thongke.php';
+include '../model/validate.php';
     if(isset($_GET['act'])){
         $act = $_GET['act'];
         switch ($act){
             case 'addloai':
-                //Kiem tra nguoi dung co click vao nut add hay khong
-                if(isset($_POST['themmoi']) && ($_POST['themmoi'])){
-                    $tenloai=$_POST['tenloai'];
-                    insert_loai($tenloai);
-                    $thongbao = "Successfully!!!";
+                // Check if the form is submitted
+                if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                    // Get the category name from the form
+                    $tenloai = $_POST['tenloai'];
+            
+                    // Validate the category name
+                    if (!empty($tenloai)) {
+                        // Check if the category already exists
+                        $existingCategory = check_loai($tenloai);
+            
+                        if (!$existingCategory) {
+                            // Attempt to insert the category into the database
+                            if (insert_loai($tenloai)) {
+                                $thongbao = "Thêm thành công!";
+                            } else {
+                                $thongbao = "Thêm không thành công. vui lòng nhập lại";
+                            }
+                        } else {
+                            $thongbao = "Tên loại dịch vụ đã tồn tại!";
+                        }
+                    } else {
+                        $thongbao = "Tên dịch vụ không được để trống!";
+                    }
                 }
+            
+                // Load the add category form
                 include 'loai/add.php';
                 break;
             case 'listloai':
@@ -47,22 +68,37 @@ include '../model/thongke.php';
                     break;
                     //Controller dichvu
             case 'adddv':
-            if(isset($_POST['themmoi']) && ($_POST['themmoi'])){
-                $idloai=$_POST['idloai'];
-                $tendv=$_POST['tendv'];
-                $giadv=$_POST['giadv'];
-                $mota=$_POST['mota'];
-                $anh=$_FILES['anh']['name'];
-                $target_dir="../upload/";
-                $target_file = $target_dir.basename($_FILES['anh']['name']);
-                if(move_uploaded_file($_FILES['anh']['tmp_name'], $target_file)){
-        
-            }else{
-
-            }
-                insert_dichvu($tendv, $giadv, $anh, $mota,$idloai);
-                $thongbao = "Successfully!!!";
-            }
+                if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                    $idloai = $_POST['idloai'];
+                    $tendv = $_POST['tendv'];
+                    $giadv = $_POST['giadv'];
+                    $mota = $_POST['mota'];
+                    $anh = $_FILES['anh']['name'];
+                    $target_dir = "../upload/";
+                    $target_file = $target_dir . basename($_FILES['anh']['name']);
+                
+                    // Validate the service name
+                    if (!empty($tendv)) {
+                        // Check if the service already exists
+                        $existingService = check_adddv($tendv);
+                
+                        if (!$existingService) {
+                            // Attempt to move the uploaded file
+                            if (move_uploaded_file($_FILES['anh']['tmp_name'], $target_file)) {
+                                // Attempt to insert the service into the database
+                                insert_dichvu($tendv, $giadv, $anh, $mota, $idloai);
+                                $thongbao = "Thêm thành công!";
+                            } else {
+                                $thongbao = "Thêm không thành công. vui lòng nhập lại";
+                            }
+                        } else {
+                            $thongbao = "Tên dịch vụ đã tồn tại!!";
+                        }
+                    } else {
+                        $thongbao = "Tên dịch vụ không được để trống!";
+                    }
+                }
+                
                 $listloai = loadall_loai();
                 include 'dichvu/add.php';
                 break;
@@ -117,12 +153,29 @@ include '../model/thongke.php';
                         break;
                         //Nhanvien
                         case 'addnv':
-                            //Kiem tra nguoi dung co click vao nut add hay khong
-                            if(isset($_POST['themmoi']) && ($_POST['themmoi'])){
-                                $tennv=$_POST['tennv'];
-                                insert_nhanvien($tennv);
-                                $thongbao = "Successfully!!!";
+                            // Check if the form is submitted
+                            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                                // Get the staff member's name from the form
+                                $tennv = $_POST['tennv'];
+                        
+                                // Validate the staff member's name
+                                if (!empty($tennv)) {
+                                    // Check if the staff member already exists
+                                    $existingStaff = check_nv($tennv);
+                        
+                                    if (!$existingStaff) {
+                                        // Attempt to insert the staff member into the database
+                                        insert_nhanvien($tennv);
+                                        $thongbao = "Thêm nhân viên thành công!";
+                                    } else {
+                                        $thongbao = "Nhân viên đã tồn tại!";
+                                    }
+                                } else {
+                                    $thongbao = "Tên nhân viên k được để trống!";
+                                }
                             }
+                        
+                            // Load the add staff member form
                             include 'nhanvien/add.php';
                             break;
                             case 'listnv':

@@ -14,6 +14,7 @@ function checkemail($email){
     $sp = pdo_query_one($sql);
     return $sp;
 }
+
 function update_khachhang($id, $name, $sodienthoai, $username, $password, $email){
     $sql = "UPDATE khachhang SET name = '$name', sodienthoai = '$sodienthoai', username = '$username', password = '$password', email = '$email' WHERE id=".$id;
     pdo_execute($sql);
