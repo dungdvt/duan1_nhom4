@@ -10,6 +10,7 @@ include 'model/khachhang.php';
 include 'model/nhanvien.php';
 include 'model/ca.php';
 include 'model/validate.php';
+// include 'view/datlich/datlich.php';
 $loainew =  loadall_loai();
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
@@ -153,7 +154,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $listdichvu = loadall_dichvu();
             $listnhanvien =  loadall_nhanvien();
             $listca = loadall_ca();
-            include 'view/datlich.php';
+            include 'view/datlich/datlich.php';
             break;
         case 'history':
             include 'view/taikhoan/history.php';
