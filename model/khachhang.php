@@ -28,4 +28,5 @@ function delete_khachhang($id){
     $sql = "DELETE FROM khachhang WHERE id=".$id;
     pdo_execute($sql);
 }
+
 ?>

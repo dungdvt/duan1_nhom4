@@ -10,6 +10,8 @@ include 'model/khachhang.php';
 include 'model/nhanvien.php';
 include 'model/ca.php';
 include 'model/validate.php';
+include 'model/datlich.php';
+
 $loainew =  loadall_loai();
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
@@ -150,6 +152,23 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             header('location: index.php');
             break;
         case 'datlich':
+          
+            $isLoggedIn = isset($_SESSION['username']);
+            if (isset($_POST['datlich']) && $_POST['datlich'] && $isLoggedIn) {
+                $id_khachhang =  $isLoggedIn ;
+                $id_ca = $_POST['id_ca'];
+                $id_nhanvien = $_POST['id_nhanvien'];
+                $id_dichvu = $_POST['id_dichvu'];
+                $ngay = $_POST['ngay'];
+                insert_datlich($id_khachhang, $id_ca, $id_nhanvien, $id_dichvu, $ngay);
+            } else if (!$isLoggedIn) {
+                // Người dùng chưa đăng nhập, hiển thị thông báo hoặc chuyển hướng đến trang đăng nhập
+                header("Location: index.php?act=dangnhap");
+                exit;
+                // Hoặc có thể chuyển hướng đến trang đăng nhập
+                // 
+            }
+        
             $listdichvu = loadall_dichvu();
             $listnhanvien =  loadall_nhanvien();
             $listca = loadall_ca();

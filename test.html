@@ -1,7 +1,98 @@
-<!-- SELECT name, COUNT(name) FROM dichvu 
-GROUP BY name 
-ORDER BY COUNT(name) DESC LIMIT 1;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .form-content #danhSachCaVaStylistWrapper {
+            display: none;
+        }
 
-SELECT id_nhanvien, COUNT(id_nhanvien) FROM datlich 
-GROUP BY id_nhanvien 
-ORDER BY COUNT(id_nhanvien) DESC LIMIT 1; -->
+        .form-content #danhSachCa {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+        }
+
+        .form-content input[type="checkbox"] {
+            display: none;
+        }
+
+        .form-content .ca-label {
+            cursor: pointer;
+            flex: 0 0 calc(50% - 10px);
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-content .ca-label:hover {
+            background-color: #ddd;
+        }
+
+        .form-content .ca-label.chon {
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        .form-content input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-content input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <title>Chọn Ca</title>
+</head>
+<body>
+    <div class="form-content">
+        <form id="chonCaForm" action="process.php" method="post">
+            <div id="danhSachCa">
+                <!-- Tạo 20 "ca" sử dụng input type="checkbox" -->
+                <label class="ca-label" onclick="chonCa(this)">
+                    <input type="checkbox" name="ca[]" value="1"> Ca 1
+                </label>
+                <label class="ca-label" onclick="chonCa(this)">
+                    <input type="checkbox" name="ca[]" value="2"> Ca 2
+                </label>
+                <!-- Thêm các "ca" khác tương tự -->
+            </div>
+            <input type="submit" value="Chọn Các Ca">
+        </form>
+    </div>
+
+    <script>
+        function chonCa(caLabel) {
+            // Loại bỏ lớp 'chon' từ tất cả các "ca"
+            var cacCa = document.querySelectorAll('.ca-label');
+            cacCa.forEach(function (ca) {
+                ca.classList.remove('chon');
+            });
+
+            // Thêm lớp 'chon' cho "ca" được chọn
+            caLabel.classList.add('chon');
+        }
+    </script>
+</body>
+</html>
+<?php
+// Tạo 20 "ca"
+foreach ($listca as $ca) {
+    extract($ca);
+    echo '<div class="ca">'.$name.'</div>';
+}
+
+?>

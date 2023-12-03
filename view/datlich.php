@@ -1,10 +1,10 @@
 
 <main class="form-content">
             <h1>Đặt lịch giữ chỗ</h1>
-            <form action="" method="post">
+            <form action="index.php?act=datlich" method="post">
                 <label for="dichvu">Chọn dịch vụ</label>
                 <!-- Thay input type="text" thành select -->
-                <select name="iddichvu">
+                <select name="id_dichvu">
                     <?php
                     foreach($listdichvu as $dv){
                         extract($dv);
@@ -19,7 +19,7 @@
                 <div id="danhSachCaVaStylistWrapper">
                     <label for="">Chọn stylist</label>
                     <br>
-                    <select name="idstylist">
+                    <select name="id_nhanvien">
                     <?php
                     foreach($listnhanvien as $nv){
                         extract($nv);
@@ -31,18 +31,25 @@
                     </select>
                     <label for="">Chọn giờ</label>
                     <div id="danhSachCa" class="hang-ngang">
-                        <!-- Danh sách ca sẽ được hiển thị ở đây -->
-                        <?php
-                    foreach($listca as $ca){
+                 
+          <!-- Tạo 20 "ca" sử dụng input type="checkbox" -->
+                 
+                   
+                    <?php
+                    foreach ($listca as $ca) {
                         extract($ca);
-                        echo '
-                        <div class="ca" onclick="chonCa(this)">'.$name.'</div>';
+                        echo ' <label class="ca-label" onclick="chonCa(this)">
+                        <input type="checkbox"  name="id_ca" value="' . $id . '" >'.$name.'
+                        </label>';
                     }
-                        ?>
-                    </div>
+                    ?>
+                     
+              
+                </div>
                 </div>
                 <!-- Thêm nút submit cho form -->
-                <input type="submit" value="Đặt lịch">
+                
+                <input type="submit" name="datlich" value="Đặt lịch">
                 <p>Cắt xong trả tiền, hủy lịch không sao</p>
             </form>
         </main>
