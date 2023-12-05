@@ -96,7 +96,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                                     if (!$existingUser) {
                                         // Insert into the database if the username is not taken
                                         insert_khachhang($name, $sodienthoai, $username, $password, $email);
-                                        // $_SESSION['thongbao'] = "Đã đăng ký thành công. Vui lòng đăng nhập!";
+
                                     } else {
                                         $thongbao = "Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác.";
                                     }
@@ -126,10 +126,10 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $name = $_POST['name'];
                 $email = $_POST['email'];
                 $sodienthoai = $_POST['sodienthoai'];
-                $username = $_POST['username'];
+             
                 $password = $_POST['password'];
                 $id = $_POST['id'];
-                update_khachhang($id, $name, $sodienthoai, $username, $password, $email);
+                update_khachhang($id, $name, $sodienthoai, $password, $email);
                 $_SESSION['username'] = checkuser($username, $password);
                 header('location: index.php?act=sua');
             } else {
@@ -152,15 +152,21 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             header('location: index.php');
             break;
         case 'datlich':
-          
             $isLoggedIn = isset($_SESSION['username']);
             if (isset($_POST['datlich']) && $_POST['datlich'] && $isLoggedIn) {
-                $id_khachhang =  $isLoggedIn ;
+                $id_khachhang =  $_SESSION['username']['id'] ;
                 $id_ca = $_POST['id_ca'];
                 $id_nhanvien = $_POST['id_nhanvien'];
                 $id_dichvu = $_POST['id_dichvu'];
                 $ngay = $_POST['ngay'];
-                insert_datlich($id_khachhang, $id_ca, $id_nhanvien, $id_dichvu, $ngay);
+                $checkNv = check_nhanvien($id_ca,$id_nhanvien, $ngay);
+                if (empty($checkNv)) {
+                    // Nếu không có lịch làm việc, thực hiện thêm đặt lịch
+                    insert_datlich($id_khachhang, $id_ca, $id_nhanvien, $id_dichvu, $ngay);
+                } else {
+                    // Nếu có lịch làm việc, có thể hiển thị thông báo hoặc thực hiện xử lý khác
+                    echo "Không thể đặt lịch vào ngày và giờ đã chọn. Vui lòng chọn thời gian khác!";
+                }
             } else if (!$isLoggedIn) {
                 // Người dùng chưa đăng nhập, hiển thị thông báo hoặc chuyển hướng đến trang đăng nhập
                 header("Location: index.php?act=dangnhap");
@@ -172,10 +178,22 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $listdichvu = loadall_dichvu();
             $listnhanvien =  loadall_nhanvien();
             $listca = loadall_ca();
-            include 'view/datlich.php';
+            include 'view/datlich/datlich.php';
             break;
         case 'history':
-            include 'view/taikhoan/history.php';
+            if(isset($_SESSION['username'])) {
+            $id_khachhang = $_SESSION['username']['id'];
+        
+            // Sử dụng $id_khachhang trong câu truy vấn
+            $listhistory = lichsudatlich($id_khachhang);
+        
+            // Thực hiện câu truy vấn và xử lý kết quả...
+        } else {
+            // Xử lý trường hợp người dùng chưa đăng nhập
+            echo "Bạn chưa đăng nhập.";
+        }
+           
+            include 'view/datlich/history.php';
             break;
         case 'gioithieu':
             include 'view/gioithieu.php';

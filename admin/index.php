@@ -6,6 +6,8 @@ include '../model/dichvu.php';
 include '../model/nhanvien.php';
 include '../model/thongke.php';
 include '../model/validate.php';
+include '../model/datlich.php';
+
     if(isset($_GET['act'])){
         $act = $_GET['act'];
         switch ($act){
@@ -208,6 +210,14 @@ include '../model/validate.php';
                                         $listnv = pdo_query($sql);
                                         include 'nhanvien/list.php';
                                         break;
+                                        
+                                        case 'qldl':
+                                                
+                                                $listdatlich=loadname();
+                                                $listall= loadall_datlich();
+                                                include 'datlich/list.php';
+                                            break;
+
                                         case 'thongke':
                                             $listthongke=loadall_thongke(); 
                                             include 'thongke/list.php';

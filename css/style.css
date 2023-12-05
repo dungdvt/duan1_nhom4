@@ -124,7 +124,7 @@ max-width: 300px;
     flex: 1;
     justify-content: flex-end; 
 }
-.header .dangnhap input[type="submit"],
+.header
 .form-datlich input[type="submit"]
 {
 
@@ -135,7 +135,16 @@ max-width: 300px;
     color: white;
     font-size: 17px;
 }
-.dangnhap input[type="submit"]:hover{
+.dangnhap a{
+    text-decoration: none;
+    padding: 10px 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgba(0, 123, 255, 0);
+    color: white;
+    font-size: 17px;
+}
+.dangnhap a:hover{
     background-color: goldenrod;
     cursor: pointer;
 }

@@ -44,38 +44,42 @@
     .form-content #danhSachCaVaStylistWrapper {
         display: none;
     }
-
     .form-content #danhSachCa {
-        margin-top: 20px;
-        border-top: 1px solid #ccc;
-        padding-top: 10px;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        gap: 10px;
-    }
-
-    .form-content input[type="checkbox"] {
-        display: none;
-    }
-
-    .form-content .ca-label {
-        cursor: pointer;
-        flex: 0 0 calc(50% - 10px);
-        background-color: #f4f4f4;
-        padding: 15px;
-        border-radius: 4px;
-        text-align: center;
-        transition: background-color 0.3s ease;
-    }
-
-    .form-content .ca-label:hover {
-        background-color: #ddd;
-    }
-
-    .form-content .ca-label.chon {
-        background-color: #4caf50;
-        color: #fff;
-    }
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px;
+        border: 1px solid #ddd; /* Đường viền giữa các mục */
+        border-radius: 8px; /* Đường viền cong */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+      }
+      /* CSS cho checkbox */
+      .form-content input[type="checkbox"] {
+        margin-right: 5px; /* Khoảng cách giữa checkbox và văn bản */
+      }
+      .form-content .ca-label {
+        display: flex;
+  align-items: center;
+  margin-right: 15px;
+  padding: 8px; /* Độ bo tròn và khoảng cách với đường biên */
+  background-color: #f5f5f5; /* Màu nền */
+  border-radius: 8px; /* Đường biên cong */
+  cursor: pointer; /* Hiển thị con trỏ khi di chuột */
+  transition: background-color 0.3s ease; /* Hiệu ứng màu nền */
+          }
+          
+          .form-content .ca-label:hover {
+            background-color: #e0e0e0; /* Màu nền khi di chuột qua */
+          }
+      
+          .form-content .ca-label.chon {
+              background-color: #4caf50;
+              color: #fff;
+          }
+          .form-content input[type="checkbox"] {
+              display: none;
+              margin-right: 5px;
+          }
 
     .form-content input[type="submit"] {
         background-color: #4caf50;

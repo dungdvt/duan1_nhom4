@@ -1,5 +1,6 @@
 <main>
     <h3>Danh sách > <?=$tenloai?></h3>
+    <div class="content">
     <div class="box-content">
     <?php
         $i=0;
@@ -24,5 +25,5 @@
            $i += 1;
         ?>
            </div>
-        
+           </div>
 </main>

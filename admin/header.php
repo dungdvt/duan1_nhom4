@@ -17,7 +17,8 @@
                 <li><a href="index.php?act=addloai"><i class="fa-solid fa-folder"></i> Loại dịch vụ</a></li>
                 <li><a href="index.php?act=adddv"><i class="fa-solid fa-gears"></i> Dịch vụ</a></li>
                 <li><a href="index.php?act=addnv"><i class="fa-solid fa-shop"></i> Nhân viên</a></li>
-                <li><a href=""><i class="fa-solid fa-user"></i> Khách hàng</a></li>
+                <li><a href="index.php?act=khachhang"><i class="fa-solid fa-user"></i> Khách hàng</a></li>
+                <li><a href="index.php?act=qldl"><i class="fa-solid fa-user"></i> Quản lí đặt lịch</a></li>
                 <li><a href="index.php?act=thongke"><i class="fa-solid fa-chart-simple"></i> Thống kê</a></li>
                 <li><a href="../index.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Thoát</a></li>
             </ul>

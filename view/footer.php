@@ -1,5 +1,5 @@
  <!-- <footer>-->
-        <footer>
+ <footer>
             <div class="boxfooter">
                 <div class="thongtin">
                     <a href="">Về chúng tôi</a>
@@ -20,7 +20,9 @@
             </div>
         </footer>
 </div>
-    <script src="../js/app.js"></script>
+    
+</body>
+<script src="../js/app.js"></script>
     <script>
         var album=[];
 for(var i=1;i<6;i++){
@@ -65,7 +67,5 @@ function pre(){
         document.getElementById("overlay").style.display = "none";
     }
 </script>
-</body>
-     
 
 </html>

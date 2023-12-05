@@ -81,7 +81,7 @@ input[type="submit"]:hover {
                     <input type="tel"  name="sodienthoai" pattern="[0-9]{10}" required value="<?=$sodienthoai?>">
 
                     <!-- <label for="username">Tên đăng nhập:</label>
-                    <input type="text"  name="username" required value="" > -->
+                    <input type="text" disabled name="username" required value="" > -->
 
                     <label for="password">Mật Khẩu:</label>
                     <input type="password"  name="password" required value="<?=$password?>">

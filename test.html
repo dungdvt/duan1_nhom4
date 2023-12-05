@@ -96,3 +96,4 @@ foreach ($listca as $ca) {
 }
 
 ?>
+SELECT nhanvien.id, nhanvien.name, ca.name AS ca_ten FROM datlich INNER JOIN nhanvien ON datlich.id_nhanvien = nhanvien.id INNER JOIN ca ON datlich.id_ca = ca.id WHERE datlich.id_ca = 11 AND DATE(datlich.ngay) = '2023-12-06';
