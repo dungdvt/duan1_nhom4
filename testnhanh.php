@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chào mừng bạn đến 4` Barber</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <link rel="stylesheet" href="css/formbook.css">
-    <link rel="stylesheet" href="css/style.css">
+ 
 </head>
 
+    
+   
 <body>
 <div class="container">
         <div class="header">
@@ -56,7 +57,6 @@
                             <?=$name?>
                         </strong></label>
                     <div id="user-options" class="user-dropdown-content">
-                        <li><a href="index.php?act=quenmk">Quên mật khẩu</a></li>
                         <li><a href="index.php?act=sua">Sửa thông tin</a></li>
                         <?php if($role==1){ ?>
                         <li><a href="admin/index.php">Quản trị</a></li>
@@ -77,8 +77,7 @@
             </div>
             <?php }?>
         </div>    
-
-    <main>
+        <main>
     <div class="slideshow">
         <div class="banner" >
             <img id="banner" src="./image/img2.png" alt="">
@@ -125,27 +124,27 @@
         
         </div>
     </main>
- <!-- <footer>-->
-        <footer>
-            <div class="boxfooter">
-                <div class="thongtin">
-                    <a href="">Về chúng tôi</a>
-                    <a href="">Dịch vụ</a>
-                    <a href="">Chính sách bảo mật</a>
-                </div>
-                <div class="giolamviec">
-                    <p>Giờ phục vụ:
-                        8h30 - 20h30 (Thứ 2-Chủ nhật)</p>
-                    <p>Hotline (1000đ/phút):1900.27.27.03</p>
-                    <p>Liên hệ học nghề tóc:0967.86.3030</p>
-                    <a href="" class="thongtin">Liên hệ quảng cáo</a>
-                </div>
+     <!-- <footer>-->
+ <footer>
+    <div class="footer-container">
+        <div class="footer-left">
+            <h3>Thông tin liên hệ</h3>
+            <p>Địa chỉ: Đường ABC, Thành phố XYZ, Quốc gia</p>
+            <p>Email: info@example.com</p>
+            <p>Điện thoại: +84 123 456 789</p>
+        </div>
+        <div class="footer-right">
+            <h3>Follow us</h3>
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Twitter</a>
+            <a href="#" target="_blank">Instagram</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 Tên Công Ty. All rights reserved.</p>
+    </div>
+</footer>
 
-            </div>
-            <div class="copyright">
-                <p>Copyright © 2023 HuyHTML. All rights reserved.</p>
-            </div>
-        </footer>
 </div>
     
 </body>

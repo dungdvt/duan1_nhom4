@@ -9,8 +9,8 @@ function checkuser($username, $password){
     $sp = pdo_query_one($sql);
     return $sp;
 }
-function checkemail($email){
-    $sql = "SELECT * FROM khachhang WHERE email='".$email."'";
+function checkemail($email,$username){
+    $sql = "SELECT * FROM khachhang WHERE email='".$email."' AND username='".$username."'";
     $sp = pdo_query_one($sql);
     return $sp;
 }
@@ -34,4 +34,5 @@ function lichsudatlich($id_khachhang){
     $listhistory = pdo_query($sql);
 return $listhistory;
 }
+
 ?>

@@ -52,11 +52,10 @@
             </script>
             <div class="row">
                 <div class="user-dropdown">
-                    <label for="" onclick="toggleOptions()">Xin chào <strong class="strong">
-                            <?=$name?>
+                    <label for="hello" onclick="toggleOptions()">Xin chào <strong class="strong">
+                            "<?=$name?>"
                         </strong></label>
                     <div id="user-options" class="user-dropdown-content">
-                        <li><a href="index.php?act=quenmk">Quên mật khẩu</a></li>
                         <li><a href="index.php?act=sua">Sửa thông tin</a></li>
                         <?php if($role==1){ ?>
                         <li><a href="admin/index.php">Quản trị</a></li>

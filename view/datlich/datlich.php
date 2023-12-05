@@ -45,6 +45,9 @@
                     ?>
                 </div>
                 </div>
+                <div>
+                
+                </div>
  <!-- Thêm nút submit cho form -->
                 <input type="submit" name="datlich" value="Đặt lịch">
                 <p>Cắt xong trả tiền, hủy lịch không sao</p>
