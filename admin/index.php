@@ -1,4 +1,5 @@
 <?php
+
 include '../model/pdo.php';
 include 'header.php';
 include '../model/loai.php';
@@ -7,6 +8,7 @@ include '../model/nhanvien.php';
 include '../model/thongke.php';
 include '../model/khachhang.php';
 include '../model/validate.php';
+include '../model/binhluan.php';
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
@@ -246,7 +248,17 @@ if (isset($_GET['act'])) {
                 include 'khachhang/list.php';
                 break;
     
-          
+                case 'dsbl':
+                    $listbinhluan = loadall_binhluan(0);
+                    include "binhluan/list.php";
+                    break;
+                case 'xoabl':
+                      if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                          xoa_binhluan($_GET['id']);
+                      }
+                      $listbinhluan = loadall_binhluan(0);
+                      include 'binhluan/list.php';
+                      break; 
 
 
 

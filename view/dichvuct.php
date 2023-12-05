@@ -22,6 +22,18 @@
     ?>
      
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#binhluan").load("view/binhluan/binhluanform.php", {
+          idpro: <?= $id ?>
+        });
+      });
+    </script>
+    <div class="row" id="binhluan">
+      
+
+    </div>
     <div class="btn">
         <input type="submit" name="" value="Đặt lịch ngay" id="">
     </div>

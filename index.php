@@ -1,5 +1,5 @@
 <?php
-ob_start();
+// ob_start();
 session_start();
 include 'model/pdo.php';
 include 'model/dichvu.php';
@@ -10,8 +10,11 @@ include 'model/khachhang.php';
 include 'model/nhanvien.php';
 include 'model/ca.php';
 include 'model/validate.php';
+
+
 // include 'view/datlich/datlich.php';
 $loainew =  loadall_loai();
+
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
@@ -50,7 +53,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 include 'view/home.php';
             }
 
-
+            
             break;
             case 'dangnhap':
                 if (isset($_POST['dangnhap'])) {
@@ -141,11 +144,11 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         case 'dangxuat':
 
             // Bắt đầu session nếu chưa tồn tại
-            session_start();
+            // session_start();
 
             // Xoá toàn bộ session
             session_unset();
-            session_destroy();
+            // session_destroy();
 
             // Điều hướng người dùng về trang đăng nhập hoặc trang chủ, tuỳ thuộc vào yêu cầu của bạn
             header('location: index.php');
@@ -156,9 +159,33 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $listca = loadall_ca();
             include 'view/datlich/datlich.php';
             break;
+        case 'binhluan':
+            // if(isset($_SESSION['user'])) {
+            //     if (isset($_POST['guibinhluan']) && ($_POST['guibinhluan'])){
+
+            //         $noidung = $_POST['noidung'];
+            //         $idpro = $_POST['idpro'];
+            //         $iduser =$_SESSION['user']['id'];
+            //         $ngaybinhluan = date('h:i:sa d/m/Y');
+            //         insert_binhluan($noidung,$iduser,$idpro,$ngaybinhluan);
+                   
+            //         // $_SERVER['HTTP_REFERER'] chứa URL của trang trước đó mà người dùng đã đến trước khi họ đến trang hiện tại
+            //     }
+            //   }else{
+            //     if (isset($_POST['guibinhluan']) && ($_POST['guibinhluan'])){
+            //       $_SESSION['thongbao'] = "yêu cầu đăng nhập "; 
+            //       echo 'Yêu cầu phải đăng nhập';
+            //       header("location: index.php?act=dangnhap");
+            //       exit;
+            //     }
+            //   }    
+            include 'view/dichvuct.php';
+            break;
+          
         case 'history':
             include 'view/taikhoan/history.php';
             break;
+          
         case 'gioithieu':
             include 'view/gioithieu.php';
             break;

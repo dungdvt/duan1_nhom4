@@ -73,6 +73,7 @@
                         </h2>
                     <label for="fullname">Họ và Tên:</label>
                     <input type="text" name="name" >
+                    <span  ><?= $name ?></span>
 
                     <label for="email">Email:</label>
                     <input type="email"  name="email" >
