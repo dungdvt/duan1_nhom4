@@ -78,6 +78,37 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
                                 if (!$existingUser) {
                                     insert_khachhang($name, $sodienthoai, $username, $password, $email);
+                                    echo '<script>
+                    var overlay = document.createElement("div");
+                    overlay.style.position = "fixed";
+                    overlay.style.top = "0";
+                    overlay.style.left = "0";
+                    overlay.style.width = "100%";
+                    overlay.style.height = "100%";
+                    overlay.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+                    overlay.style.display = "flex";
+                    overlay.style.alignItems = "center";
+                    overlay.style.justifyContent = "center";
+                    overlay.style.zIndex = "9999";
+
+                    var popup = document.createElement("div");
+                    popup.innerHTML = "Đăng kí thành công";
+                    popup.style.backgroundColor = "white";
+                    popup.style.padding = "50px 20px";
+                    popup.style.maxWidth = "100%";
+
+                    var closeButton = document.createElement("button");
+                    closeButton.innerHTML = "Đóng";
+                    closeButton.style.marginTop = "10px";
+                    closeButton.style.padding = "5px 10px";
+                    closeButton.addEventListener("click", function() {
+                        document.body.removeChild(overlay);
+                    });
+
+                    popup.appendChild(closeButton);
+                    overlay.appendChild(popup);
+                    document.body.appendChild(overlay);
+                 </script>';
                                 } else {
                                     $thongbao = "Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác.";
                                 }
@@ -91,7 +122,37 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                         $thongbao = "Email không hợp lệ!";
                     }
                 } else {
-                    $thongbao = "Vui lòng nhập đủ thông tin.";
+                    echo '<script>
+                    var overlay = document.createElement("div");
+                    overlay.style.position = "fixed";
+                    overlay.style.top = "0";
+                    overlay.style.left = "0";
+                    overlay.style.width = "100%";
+                    overlay.style.height = "100%";
+                    overlay.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+                    overlay.style.display = "flex";
+                    overlay.style.alignItems = "center";
+                    overlay.style.justifyContent = "center";
+                    overlay.style.zIndex = "9999";
+
+                    var popup = document.createElement("div");
+                    popup.innerHTML = "Vui lòng nhập đầy đủ thông tin";
+                    popup.style.backgroundColor = "white";
+                    popup.style.padding = "50px 20px";
+                    popup.style.maxWidth = "100%";
+
+                    var closeButton = document.createElement("button");
+                    closeButton.innerHTML = "Đóng";
+                    closeButton.style.marginTop = "10px";
+                    closeButton.style.padding = "5px 10px";
+                    closeButton.addEventListener("click", function() {
+                        document.body.removeChild(overlay);
+                    });
+
+                    popup.appendChild(closeButton);
+                    overlay.appendChild(popup);
+                    document.body.appendChild(overlay);
+                 </script>';
                 }
                 include 'view/taikhoan/dangki.php';
                 exit();
@@ -105,7 +166,38 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $username = $_POST['username'];
                 $checkemail = checkemail($email, $username);
                 if (is_array($checkemail)) {
-                    $thongbao = '<span style="color: green;">Mật khẩu của bạn: ' . $checkemail['password'] . '</span>';
+                    echo '<script>
+                    var overlay = document.createElement("div");
+                    overlay.style.position = "fixed";
+                    overlay.style.top = "0";
+                    overlay.style.left = "0";
+                    overlay.style.width = "100%";
+                    overlay.style.height = "100%";
+                    overlay.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+                    overlay.style.display = "flex";
+                    overlay.style.alignItems = "center";
+                    overlay.style.justifyContent = "center";
+                    overlay.style.zIndex = "9999";
+
+                    var popup = document.createElement("div");
+                    popup.innerHTML = "Mật khẩu của bạn là: ' . $checkemail['password'] . '";
+                    popup.style.backgroundColor = "white";
+                    popup.style.padding = "50px 20px";
+                    popup.style.maxWidth = "100%";
+
+                    var closeButton = document.createElement("button");
+                    closeButton.innerHTML = "Đóng";
+                    closeButton.style.marginTop = "10px";
+                    closeButton.style.padding = "5px 10px";
+                    closeButton.addEventListener("click", function() {
+                        document.body.removeChild(overlay);
+                    });
+
+                    popup.appendChild(closeButton);
+                    overlay.appendChild(popup);
+                    document.body.appendChild(overlay);
+                 </script>';
+                 
                 } else {
                     $thongbao = '<span style="color: red;">Email này không tồn tại!</span>';
                 }
@@ -122,7 +214,38 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $id = $_POST['id'];
                 update_khachhang($id, $name, $sodienthoai, $password, $email);
                 $_SESSION['username'] = checkuser($username, $password);
-                header('location: index.php?act=sua');
+                 echo '<script>
+                var overlay = document.createElement("div");
+                overlay.style.position = "fixed";
+                overlay.style.top = "0";
+                overlay.style.left = "0";
+                overlay.style.width = "100%";
+                overlay.style.height = "100%";
+                overlay.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+                overlay.style.display = "flex";
+                overlay.style.alignItems = "center";
+                overlay.style.justifyContent = "center";
+                overlay.style.zIndex = "9999";
+
+                var popup = document.createElement("div");
+                popup.innerHTML = "Cập nhật thành công";
+                popup.style.backgroundColor = "white";
+                popup.style.padding = "50px 20px";
+                popup.style.maxWidth = "100%";
+
+                var closeButton = document.createElement("button");
+                closeButton.innerHTML = "Đóng";
+                closeButton.style.marginTop = "10px";
+                closeButton.style.padding = "5px 10px";
+                closeButton.addEventListener("click", function() {
+                    document.body.removeChild(overlay);
+                });
+
+                popup.appendChild(closeButton);
+                overlay.appendChild(popup);
+                document.body.appendChild(overlay);
+             </script>';
+             
             } else {
                 $thongbao = "Tài khoản không tồn tại";
             }
@@ -141,12 +264,13 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             if ($isLoggedIn) {
                 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['datlich'])) {
                     $id_khachhang = $_SESSION['username']['id'];
+                    if (isset($_POST['id_ca'], $_POST['id_nhanvien'], $_POST['id_dichvu'], $_POST['ngay'])) {
                     $id_ca = $_POST['id_ca'];
                     $id_nhanvien = $_POST['id_nhanvien'];
                     $id_dichvu = $_POST['id_dichvu'];
                     $ngay = $_POST['ngay'];
 
-                    if (empty($id_ca) || empty($id_nhanvien) || empty($id_dichvu) || empty($ngay)) {
+                    if (empty($id_dichvu) || empty($ngay) || empty($id_nhanvien) || empty($id_ca)) {
                         echo '<script>
                                 var overlay = document.createElement("div");
                                 overlay.style.position = "fixed";
@@ -181,8 +305,42 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     } else {
                         $checkNv = check_nhanvien($id_ca, $id_nhanvien, $ngay);
                         if (empty($checkNv)) {
-                            insert_datlich($id_khachhang, $id_ca, $id_nhanvien, $id_dichvu, $ngay);
+                            $success = insert_datlich($id_khachhang, $id_ca, $id_nhanvien, $id_dichvu, $ngay);
+                          
+                                echo '<script>
+                                var overlay = document.createElement("div");
+                                overlay.style.position = "fixed";
+                                overlay.style.top = "0";
+                                overlay.style.left = "0";
+                                overlay.style.width = "100%";
+                                overlay.style.height = "100%";
+                                overlay.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+                                overlay.style.display = "flex";
+                                overlay.style.alignItems = "center";
+                                overlay.style.justifyContent = "center";
+                                overlay.style.zIndex = "9999";
+            
+                                var popup = document.createElement("div");
+                                popup.innerHTML = "Đặt lịch thành công";
+                                popup.style.backgroundColor = "white";
+                                popup.style.padding = "50px 20px";
+                                popup.style.maxWidth = "100%";
+            
+                                var closeButton = document.createElement("button");
+                                closeButton.innerHTML = "Đóng";
+                                closeButton.style.marginTop = "10px";
+                                closeButton.style.padding = "5px 10px";
+                                closeButton.addEventListener("click", function() {
+                                    document.body.removeChild(overlay);
+                                });
+            
+                                popup.appendChild(closeButton);
+                                overlay.appendChild(popup);
+                                document.body.appendChild(overlay);
+                             </script>';
+                            
                         } else {
+                            // Xử lý khi có lịch làm việc
                             echo '<script>
                             var overlay = document.createElement("div");
                             overlay.style.position = "fixed";
@@ -195,14 +353,13 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                             overlay.style.alignItems = "center";
                             overlay.style.justifyContent = "center";
                             overlay.style.zIndex = "9999";
-
+                    
                             var popup = document.createElement("div");
                             popup.innerHTML = "Không thể đặt lịch vào ngày và giờ đã chọn. Vui lòng chọn thời gian khác!";
                             popup.style.backgroundColor = "white";
                             popup.style.padding = "50px 20px";
-                            
                             popup.style.maxWidth = "100%";
-
+                    
                             var closeButton = document.createElement("button");
                             closeButton.innerHTML = "Đóng";
                             closeButton.style.marginTop = "10px";
@@ -210,13 +367,46 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                             closeButton.addEventListener("click", function() {
                                 document.body.removeChild(overlay);
                             });
-
+                    
                             popup.appendChild(closeButton);
                             overlay.appendChild(popup);
                             document.body.appendChild(overlay);
-                         </script>';
+                        </script>';
                         }
                     }
+                }else{
+                    echo '<script>
+                    var overlay = document.createElement("div");
+                    overlay.style.position = "fixed";
+                    overlay.style.top = "0";
+                    overlay.style.left = "0";
+                    overlay.style.width = "100%";
+                    overlay.style.height = "100%";
+                    overlay.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+                    overlay.style.display = "flex";
+                    overlay.style.alignItems = "center";
+                    overlay.style.justifyContent = "center";
+                    overlay.style.zIndex = "9999";
+
+                    var popup = document.createElement("div");
+                    popup.innerHTML = "Vui lòng chọn đầy đủ thông tin!";
+                    popup.style.backgroundColor = "white";
+                    popup.style.padding = "50px 20px";
+                    popup.style.maxWidth = "100%";
+
+                    var closeButton = document.createElement("button");
+                    closeButton.innerHTML = "Đóng";
+                    closeButton.style.marginTop = "10px";
+                    closeButton.style.padding = "5px 10px";
+                    closeButton.addEventListener("click", function() {
+                        document.body.removeChild(overlay);
+                    });
+
+                    popup.appendChild(closeButton);
+                    overlay.appendChild(popup);
+                    document.body.appendChild(overlay);
+                 </script>';
+                }
                 } else {
                     // Handle non-POST cases
                 }
@@ -240,6 +430,27 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             include 'view/datlich/history.php';
             break;
+            
+            case 'huylich':
+                // Xử lý hủy lịch ở đây
+                if (isset($_SESSION['username'])) {
+                    $id_khachhang = $_SESSION['username']['id'];
+                    // Lấy thông tin cần thiết để xác định lịch cần hủy, có thể từ biến GET hoặc POST
+                    $id_datlich_to_cancel = $_GET['id_datlich']; // Thay thế bằng cách lấy từ biến phù hợp
+                    huy_datlich($id_datlich_to_cancel);
+                    // Thực hiện hàm hủy lịch, ví dụ: huy_datlich($id_datlich_to_cancel);
+                    
+                    // Sau khi hủy, có thể làm mới trang hoặc thực hiện các bước cần thiết khác
+                    header("Location: index.php?act=history");
+                    exit();
+                } else {
+                    echo "Bạn chưa đăng nhập.";
+                }
+                break;
+            case 'binhluan':
+                
+                include 'view/dichvuct.php';
+                break;
 
         case 'gioithieu':
             include 'view/gioithieu.php';

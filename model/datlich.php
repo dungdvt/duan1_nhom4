@@ -14,4 +14,8 @@ function loadname(){
 $listkhachhang = pdo_query($sql);
 return $listkhachhang;
 }
+function huy_datlich($id){
+    $sql = "DELETE FROM datlich WHERE id=".$id;
+    pdo_execute($sql);
+}
 ?>

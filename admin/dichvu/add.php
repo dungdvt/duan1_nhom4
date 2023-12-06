@@ -4,7 +4,7 @@
             <form action="" method="post" enctype="multipart/form-data">
             Loại <br>
                     <select name="idloai">
-                    
+                    <option value="0" disabled selected>Chọn loại hình dịch vụ</option>
                         <?php
                     foreach($listloai as $loai){
                         extract($loai);

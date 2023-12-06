@@ -1,22 +1,26 @@
 <div class="boxright">
-            <h2>Danh sách loại hình dịch vụ</h2>
+            <h2>Danh sách khách hàng </h2>
             <table class="table loai" border="1">
                 <tr>
-                    <th>STT</th>
-                    <th>Loại dịch vụ</th>
+                    <th>ID</th>
+                    <th>Tên khách hàng</th>
+                    <th>Tên đăng nhập</th>
+                    <th>Số điện thoại</th>
+                    <th>Email</th>
                     <th></th>
                 </tr>
                 <?php
-                    foreach($listloai as $loai){
-                        extract($loai);
-                        $sualoai='index.php?act=sualoai&id='.$id;
-                        $xoaloai='index.php?act=xoaloai&id='.$id;
+                    foreach($listkhachhang as $kh){
+                        extract($kh);
+                        $xoakhachhang='index.php?act=xoakhachhang&id='.$id;
                         echo ' <tr>
                         <td>'.$id.'</td>
                         <td>'.$name.'</td>
+                        <td>'.$username.'</td>
+                        <td>'.$sodienthoai.'</td>
+                        <td>'.$email.'</td>
                         <td>
-                            <a href="'.$sualoai.'"><input type="button" name="" class="btn" value="Sửa"></a>
-                            <a href="'.$xoaloai.'"><input type="button" name="" class="btn" value="Xóa"  onclick="return confirm(\'Ban co chac la muon xoa khong?\')"></a>
+                            <a href="'.$xoakhachhang.'"><input type="button" name="" class="btn" value="Xóa"  onclick="return confirm(\'Ban co chac la muon xoa khong?\')"></a>
                         </td>
                     </tr>';
                     }
@@ -39,6 +43,6 @@
                     </td>
                 </tr> -->
             </table>
-            <a href="index.php?act=addloai"><input type="button" name="" class="btn" value="Thêm"></a>
+           
         </div>
        </main>

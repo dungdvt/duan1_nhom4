@@ -30,7 +30,7 @@ function delete_khachhang($id){
     pdo_execute($sql);
 }
 function lichsudatlich($id_khachhang){
-    $sql = "SELECT dichvu.name AS 'Tên sản phẩm', dichvu.gia AS 'Giá', datlich.ngay AS 'Ngày đặt hàng' FROM dichvu JOIN datlich ON dichvu.id = datlich.id_dichvu WHERE datlich.id_khachhang = $id_khachhang";
+    $sql = "SELECT dichvu.name AS 'Tên sản phẩm', dichvu.gia AS 'Giá', datlich.ngay AS 'Ngày đặt hàng', datlich.id AS 'id_datlich' FROM dichvu JOIN datlich ON dichvu.id = datlich.id_dichvu WHERE datlich.id_khachhang = $id_khachhang";
     $listhistory = pdo_query($sql);
 return $listhistory;
 }

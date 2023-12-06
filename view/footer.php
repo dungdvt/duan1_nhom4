@@ -59,14 +59,6 @@ function pre(){
 }
     </script>
     <script src="js/app.js"></script>
-    <script>
-    function openLoginForm() {
-        document.getElementById("overlay").style.display = "flex";
-    }
-
-    function closeLoginForm() {
-        document.getElementById("overlay").style.display = "none";
-    }
-</script>
+ 
 
 </html>

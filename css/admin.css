@@ -119,8 +119,109 @@ form input {
     margin-bottom: 10px;
     
 }
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    appearance: none; /* Ẩn giao diện mặc định của select trên các trình duyệt */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none; /* Loại bỏ đường viền khi chọn */
+    color: #333;
+}
+
+/* Thiết lập kiểu khi select được chọn */
+select:focus {
+    border-color: #555;
+    box-shadow: 0 0 5px rgba(85, 85, 85, 0.5);
+}
+
+/* Thiết lập kiểu cho các option trong select */
+select option {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Thiết lập kiểu khi hover trên option */
+select option:hover {
+    background-color: #f2f2f2;
+}
 input[type="text"] {
-    width: 100%; /* Đặt chiều rộng theo ý muốn */
-    padding: 5px; /* Tùy chỉnh lề bên trong input */
-    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    appearance: none; /* Ẩn giao diện mặc định của select trên các trình duyệt */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none; /* Loại bỏ đường viền khi chọn */
+    color: #333;
+}
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    outline: none; /* Loại bỏ đường viền khi chọn */
+    cursor: pointer; /* Biểu tượng con trỏ khi hover */
+}
+
+/* Thiết lập kiểu khi input type=file được chọn */
+input[type="file"]:focus {
+    border-color: #555;
+    box-shadow: 0 0 5px rgba(85, 85, 85, 0.5);
+}
+
+/* Thiết lập kiểu cho nút chọn file */
+.input-file-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-file-button:hover {
+    background-color: #555;
+}
+
+/* Ẩn giao diện mặc định của input type=file */
+input[type="file"]::-webkit-file-upload-button {
+    display: none;
+}
+
+/* Thiết lập kiểu cho vùng khu vực chọn file */
+.input-file-label {
+    display: block;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Thiết lập kiểu khi hover trên vùng khu vực chọn file */
+.input-file-label:hover {
+    text-decoration: underline;
+}
+textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    resize: vertical; /* Cho phép chỉnh kích thước theo chiều dọc */
+    outline: none; /* Loại bỏ đường viền khi chọn */
+    transition: border-color 0.3s; /* Hiệu ứng chuyển đổi màu đường viền */
+}
+
+/* Thiết lập kiểu khi textarea được chọn */
+textarea:focus {
+    border-color: #555;
+    box-shadow: 0 0 5px rgba(85, 85, 85, 0.5);
 }

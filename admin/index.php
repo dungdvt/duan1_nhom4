@@ -7,7 +7,8 @@ include '../model/nhanvien.php';
 include '../model/thongke.php';
 include '../model/validate.php';
 include '../model/datlich.php';
-
+include '../model/binhluan.php';
+include '../model/khachhang.php';
     if(isset($_GET['act'])){
         $act = $_GET['act'];
         switch ($act){
@@ -210,14 +211,35 @@ include '../model/datlich.php';
                                         $listnv = pdo_query($sql);
                                         include 'nhanvien/list.php';
                                         break;
-                                        
+                                        case 'listkhachhang':
+                                            $listkhachhang = loadall_khachhang();
+                                            include 'khachhang/list.php';
+                                            break;
+                                        case 'xoakhachhang':
+                                            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                                                delete_khachhang($_GET['id']);
+                                            }
+                                            $listkhachhang = loadall_khachhang();
+                                            include 'khachhang/list.php';
+                                            break;
                                         case 'qldl':
                                                 
                                                 $listdatlich=loadname();
                                                 $listall= loadall_datlich();
                                                 include 'datlich/list.php';
                                             break;
-
+                                            case 'dsbl':
+                                                $listbinhluan = loadall_binhluan(0);
+                                                include "binhluan/list.php";
+                                                break;
+                                            case 'xoabl':
+                                                  if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                                                      xoa_binhluan($_GET['id']);
+                                                  }
+                                                  $listbinhluan = loadall_binhluan(0);
+                                                  include 'binhluan/list.php';
+                                                  break; 
+                            
                                         case 'thongke':
                                             $listthongke=loadall_thongke(); 
                                             include 'thongke/list.php';

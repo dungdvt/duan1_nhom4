@@ -26,7 +26,7 @@ form {
 .h2 {
     margin-bottom:20px;
     text-align: center;
-    color: goldenrod;
+    color: #2980b9;
     
 }
 
@@ -49,19 +49,19 @@ input {
 
 input[type="submit"] {
     margin-top: 20px;
-    background-color: #4caf50;
+    background-color: #3498db;
     color: #fff;
     cursor: pointer;
 }
 
 input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #2374b2;
 }
 
 </style>
 <body>
     <div class="container">
-        <div class="box-content">
+       
             <div class="box-right">
                 <h1 class="h2">SỬA THÔNG TIN THÀNH VIÊN</h1>
                 <?php 
@@ -92,5 +92,4 @@ input[type="submit"]:hover {
                 </form>
               
             </div>
-        </div>
-  
+        

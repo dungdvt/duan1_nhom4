@@ -19,7 +19,7 @@
 .box-right .h2 {
     margin-bottom:20px;
     text-align: center;
-    color: goldenrod;
+    color: #2980b9;
     
 }
 
@@ -50,13 +50,13 @@ input[type="text"]  {
 
 .box-right input[type="submit"] {
     margin-top: 20px;
-    background-color: #4caf50;
+    background-color: #3498db;
     color: #fff;
     cursor: pointer;
 }
 
 .box-right input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #2374b2;
 }
 .box-right .thongbao{
     font-size: 14px;

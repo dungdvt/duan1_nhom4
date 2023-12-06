@@ -7,14 +7,14 @@
 body {
     
     background-color: #eeecec;
-    font-family: Arial, sans-serif;
-    
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
 }
 
 .container {
    
     background-color: #fff; 
-    font-family: segoe ui,sans-serif;
+   
     max-width:1280px;
     margin: 0 auto;
 }
@@ -98,6 +98,7 @@ body {
     padding: 12px 16px; /* Kích thước đệm của mỗi mục menu con */
     text-decoration: none; /* Loại bỏ đường chân dung mặc định */
     display: block; /* Hiển thị mỗi mục trên một dòng riêng biệt */
+   
 }
 
 /* Hiệu ứng khi hover lên mục trong menu con */
@@ -162,13 +163,19 @@ right: 10px;
 
 .form-datlich {
     background-color: #eae8e8;
-    padding: 50px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin: 20px 20px;
 }
-
+.form-datlich form{
+    background-color: #fff;
+    padding: 20px 20px;
+    margin: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 .form-datlich h2 {
     font-size: 24px;
     color: #333;
@@ -367,8 +374,10 @@ footer {
 }
 
 .service-description {
-    flex: 2;
-    padding: 10px;
+    width: 60%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
 }
 
 .service-description h2 {
@@ -412,7 +421,7 @@ footer {
 h1 {
     grid-column: span 2; /* Dãy ngang 2 cột */
     text-align: center;
-    color: #3498db;
+    color: goldenrod;
 }
 .room-button {
     padding: 20px;
@@ -436,22 +445,30 @@ h1 {
     padding: 20px 20px;
     margin-bottom: 100px;
 }
-.table{
+.table {
     width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    text-align: center;
-
+    table-layout: fixed; /* Đảm bảo rằng độ rộng của cột được xác định bởi width của bảng */
+    border-collapse: collapse; /* Loại bỏ khoảng cách giữa các ô */
 }
 .table th{
-    border: 1px solid #000000;
-    padding: 8px;
     background-color: #3498db;
-  
+    color: white;
 }
-.table td{
-    border: 1px solid #000000;
-    padding: 8px;
+/* CSS cho tất cả các cột */
+.table th, .table td {
+    text-align: center;
+    width:20%; /* Điều chỉnh độ rộng của từng cột theo nhu cầu của bạn */
+    padding: 10px; /* Thêm độ nảy cho từng ô */
+    border: 1px solid #ddd; /* Viền ô */
+}
+table a{
+    cursor: pointer;
+}
+.table input[type="submit"]{
+    
+    padding: 5px 10px;
+    background-color: #3498db;
+    color:#fff;
 }
 /* Sau khi đăng nhập  */
 .row{
@@ -473,19 +490,28 @@ h1 {
 .user-dropdown-content {
     display: none;
     position: absolute;
-    background-color: #fff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    background-color: #333; /* Màu nền của menu con */
+    min-width: 160px; /* Chiều rộng tối thiểu của menu con */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Đổ bóng cho menu con */
+    z-index: 1; /* Đảm bảo menu con nằm trên các phần tử khác */
     
 }
 .user-dropdown-content li a{
-    text-decoration: none;
+    color: white; /* Màu chữ của mục menu con */
+    padding: 12px 16px; /* Kích thước đệm của mỗi mục menu con */
+    text-decoration: none; /* Loại bỏ đường chân dung mặc định */
+    display: block; /* Hiển thị mỗi mục trên một dòng riêng biệt */
+}
+.user-dropdown-content li a:hover{
+    color: #555;
 }
 .user-dropdown-content li{
 list-style-type: none;
+background-color: #555; /* Màu nền thay đổi khi hover */
 }
 .user-dropdown-content li:hover{
-    background-color: antiquewhite;
+     background-color: #9b9b9b; /* Màu nền thay đổi khi hover */
+    ;
 }
 .user-dropdown:hover .user-dropdown-content {
     display: block;
@@ -549,7 +575,7 @@ form input[type="password"] {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #3498db;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -557,7 +583,7 @@ form input[type="password"] {
 }
 
 .login-container form button:hover {
-    background-color: #0056b3;
+    background-color: #2374b2;
 }
 
 /* Định dạng cho liên kết quên mật khẩu */

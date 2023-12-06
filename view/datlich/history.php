@@ -5,7 +5,6 @@
             <tr>
                 <th>STT</th>
                 <th>Tên dịch vụ</th>
-                
                 <th>Giá</th>
                 <th>Ngày đặt lịch</th>
                 <th>Trạng thái</th>
@@ -18,16 +17,20 @@
         $ten_dichvu = $history['Tên sản phẩm'];
         $gia = $history['Giá'];
         $ngay = $history['Ngày đặt hàng'];
-       
+        $id_datlich = $history['id_datlich'];
+
         // Đoạn mã xử lý hoặc hiển thị thông tin
         // Ví dụ:
         echo '<tr>
         <td>'.$i.'</td>
         <td>'.$ten_dichvu.'</td>
-        <td>'.$gia.'</td>
+        <td>'.$gia.' VNĐ</td>
         <td>'.$ngay.'</td>
-        
-        </tr>';
+        <td>
+        <a href="index.php?act=huylich&id_datlich=' . $id_datlich . '"  onclick="return confirm(\'Bạn có chắc là muốn hủy lịch không ?\')"><input type="submit" value="Hủy"></a>
+        </td>
+       
+        ';
         $i++;
     }
     

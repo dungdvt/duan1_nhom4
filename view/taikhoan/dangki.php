@@ -47,13 +47,13 @@
 
 .box-right input[type="submit"] {
     margin-top: 20px;
-    background-color: #4caf50;
+    background-color: #3498db;
     color: #fff;
     cursor: pointer;
 }
 
 .box-right input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #2374b2;
 }
 
 </style>

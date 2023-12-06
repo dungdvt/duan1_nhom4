@@ -16,7 +16,7 @@
                 </form>
                 <table class="table loai" border="1">
                     <tr>
-                        <th>ID</th>
+                        <th>STT</th>
                         <th>Dịch vụ</th>
                         <th>Giá</th>
                         <th>Ảnh</th>
