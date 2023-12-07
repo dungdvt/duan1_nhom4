@@ -70,12 +70,11 @@ h1{
     padding: 20px 0;
 }
 
+
 .menu ul li a {
     text-decoration: none;
     color: #fff;
-    margin-left: 20px;
-    
-   
+    margin-left: 20px;   
 }
 .menu ul li:hover {
     cursor: pointer;

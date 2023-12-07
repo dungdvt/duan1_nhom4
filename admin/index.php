@@ -210,69 +210,85 @@ if (isset($_GET['act'])) {
             break;
 
             // khachhang
-            case 'addkhachhang':
-                // Check if the form is submitted
-                if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
-                    // Get the staff member's name from the form
-                    $tenkhachhang = $_POST['tenkhachhang'];
-    
-                    // Validate the staff member's name
-                    if (!empty($username)) {
-                        // Check if the staff member already exists
-                        $existingStaff = check_kh($username);
-    
-                        if (!$existingStaff) {
-                            // Attempt to insert the staff member into the database
-                            insert_khachhang($name, $sodienthoai, $username, $password, $email);
-                            $thongbao = "Thêm khách hàng thành công!";
-                        } else {
-                            $thongbao = "Khách hàng đã tồn tại!";
-                        }
+        case 'addkhachhang':
+            // Check if the form is submitted
+            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                // Get the staff member's name from the form
+                $tenkhachhang = $_POST['tenkhachhang'];
+
+                // Validate the staff member's name
+                if (!empty($username)) {
+                    // Check if the staff member already exists
+                    $existingStaff = check_kh($username);
+
+                    if (!$existingStaff) {
+                        // Attempt to insert the staff member into the database
+                        insert_khachhang($name, $sodienthoai, $username, $password, $email);
+                        $thongbao = "Thêm khách hàng thành công!";
                     } else {
-                        $thongbao = "Tên Khách hàng k được để trống!";
+                        $thongbao = "Khách hàng đã tồn tại!";
                     }
+                } else {
+                    $thongbao = "Tên Khách hàng k được để trống!";
                 }
-    
-                // Load the add staff member form
-                include 'khachhang/add.php';
-                break;
-            case 'listkhachhang':
-                $listkhachhang = loadall_khachhang();
-                include 'khachhang/list.php';
-                break;
-            case 'xoakhachhang':
-                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                    delete_khachhang($_GET['id']);
-                }
-                $listkhachhang = loadall_khachhang();
-                include 'khachhang/list.php';
-                break;
-    
-                case 'dsbl':
-                    $listbinhluan = loadall_binhluan(0);
-                    include "binhluan/list.php";
-                    break;
-                case 'xoabl':
-                      if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                          xoa_binhluan($_GET['id']);
-                      }
-                      $listbinhluan = loadall_binhluan(0);
-                      include 'binhluan/list.php';
-                      break; 
+            }
+
+            // Load the add staff member form
+            include 'khachhang/add.php';
+            break;
+        case 'listkhachhang':
+            $listkhachhang = loadall_khachhang();
+            include 'khachhang/list.php';
+            break;
+        case 'xoakhachhang':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                delete_khachhang($_GET['id']);
+            }
+            $listkhachhang = loadall_khachhang();
+            include 'khachhang/list.php';
+            break;
+
+        case 'dsbl':
+            $listbinhluan = loadall_binhluan(0);
+            include "binhluan/list.php";
+            break;
+        case 'xoabl':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                xoa_binhluan($_GET['id']);
+            }
+            $listbinhluan = loadall_binhluan(0);
+            include 'binhluan/list.php';
+            break;
 
 
 
         case 'thongke':
             $listthongke = loadall_thongke();
-            include 'thongke/list.php';
+            include 'thongke/listloai.php';
             break;
+        case 'thongkedv':
+            $listthongkedv = load_thongke_dv();
+            include 'thongke/listdv.php';
+            break;
+        case 'thongkenv':
+            $listthongkenv = load_thongke_nv();
+            include 'thongke/listnv.php';
+            break;
+
         case 'bieudo':
             $listthongke = loadall_thongke();
             include 'thongke/bieudo.php';
             break;
+        case 'bieudodv':
+            $listthongkedv = load_thongke_dv();
+            include 'thongke/bieudo.php';
+            break;
+        case 'bieudonv':
+            $listthongkenv = load_thongke_nv();
+            include 'thongke/bieudo.php';
+            break;
 
 
-        
 
         default:
 
