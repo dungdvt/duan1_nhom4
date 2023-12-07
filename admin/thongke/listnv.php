@@ -13,9 +13,9 @@
                         foreach($listthongke as $thongke){
                             extract($thongke);
                             echo '<tr>
-                                    <td>'.$maloai.'</td>
-                                    <td>'.$tenloai.'</td>
-                                    <td>'.$countdv.'</td>
+                                    <td>'.$manv.'</td>
+                                    <td>'.$tennv.'</td>
+                                    <td>'.$countnv.'</td>
                                     <td>'.$maxprice.'</td>
                                     <td>'.$minprice.'</td>
                                     <td>'.$avgprice.'</td>
