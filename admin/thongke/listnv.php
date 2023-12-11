@@ -5,9 +5,9 @@
                             <th>Mã nhân viên</th>
                             <th>Tên nhân viên</th>
                             <th>Số lần đặt</th>
-                            <th>Giá cao nhất</th>
-                            <th>Giá thấp nhất</th>
-                            <th>Giá trung bình</th>
+                            <th>Ca đặt nhiều nhất</th>
+                            <th>Ca đặt ít nhất</th>
+                            
                         </tr>
                         <?php
                         foreach($listthongke as $thongke){
@@ -18,7 +18,6 @@
                                     <td>'.$countnv.'</td>
                                     <td>'.$maxprice.'</td>
                                     <td>'.$minprice.'</td>
-                                    <td>'.$avgprice.'</td>
                                 </tr>';
                         }
                         ?>

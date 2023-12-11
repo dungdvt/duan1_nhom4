@@ -10,7 +10,7 @@
 
         // Set Data
         const data = google.visualization.arrayToDataTable([
-            ['Đặt lịch', 'Nhân viên'],
+            ['Đặt lịch', 'Dịch vụ'],
             <?php
             $tongloai=count($listthongkedv);
             $i=1;
