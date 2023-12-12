@@ -1,5 +1,6 @@
 <div class="boxright">
                 <h2>Danh sách dịch vụ</h2>
+                
                 <form action="index.php?act=listdv" method="post">
                     <input type="text" name="kyw">
                     <select name="idloai">
@@ -16,7 +17,7 @@
                 </form>
                 <table class="table loai" border="1">
                     <tr>
-                        <th>ID</th>
+                        <th>STT</th>
                         <th>Dịch vụ</th>
                         <th>Giá</th>
                         <th>Ảnh</th>
@@ -53,6 +54,8 @@
                 </table>
                 <div class="button">
                     <a href="index.php?act=adddv"><input type="button" name="" class="btn" value="Thêm"></a>
+                    <h1><?= (isset($thongbao)) ? $thongbao : "" ; ?></h1>
                 </div>
+                
             </div>
         </main>

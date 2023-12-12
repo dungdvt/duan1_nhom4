@@ -10,12 +10,12 @@
                             
                         </tr>
                         <?php
-                        foreach($listthongke as $thongke){
+                        foreach($listthongkenv as $thongke){
                             extract($thongke);
                             echo '<tr>
                                     <td>'.$manv.'</td>
                                     <td>'.$tennv.'</td>
-                                    <td>'.$countnv.'</td>
+                                    <td>'.$thongke['countdl'].'</td>
                                     <td>'.$maxprice.'</td>
                                     <td>'.$minprice.'</td>
                                 </tr>';

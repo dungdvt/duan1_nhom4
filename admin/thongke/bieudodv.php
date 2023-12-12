@@ -12,12 +12,12 @@
         const data = google.visualization.arrayToDataTable([
             ['Đặt lịch', 'Dịch vụ'],
             <?php
-            $tongloai=count($listthongkedv);
+            $tongloai=count($listbddv);
             $i=1;
-                foreach($listthongkedv as $thongke){
+                foreach($listbddv as $thongke){
                     extract($thongke);
                     if($i==$tongloai) $dauphay=""; else $dauphay=",";
-                    echo "['".$thongke['tendv']."', ".$thongke['countdv']."]".$dauphay;
+                    echo "['".$thongke['name']."', ".$thongke['countdl']."]".$dauphay;
                     $i+=1;
                 }
             ?>

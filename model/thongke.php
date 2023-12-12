@@ -7,9 +7,9 @@ function loadall_thongke(){
     return $listtk;
 }
 function load_thongke_dv(){
-    $sql="SELECT dichvu.id AS madv, dichvu.name AS tendv, COUNT(datlich.id) AS countdl, MIN(datlich.id_dichvu) AS minprice, MAX(datlich.id_dichvu) AS maxprice, AVG(datlich.id_dichvu) AS avgprice";
-    $sql.=" FROM datlich LEFT JOIN dichvu ON dichvu.id=datlich.id_dichvu";
-    $sql.=" GROUP BY dichvu.id ORDER BY dichvu.id DESC";
+    $sql="SELECT ca.name AS cadv, datlich.ngay AS ngay, dichvu.id AS madv, dichvu.name AS tendv, COUNT(datlich.id) AS countdl, MIN(datlich.id_dichvu) AS minprice, MAX(datlich.id_dichvu) AS maxprice, AVG(datlich.id_dichvu) AS avgprice";
+    $sql.=" FROM datlich LEFT JOIN dichvu ON dichvu.id=datlich.id_dichvu JOIN ca ON datlich.id_ca = ca.id";
+    $sql.=" GROUP BY dichvu.id, ca.id, datlich.ngay  ORDER BY dichvu.id, datlich.ngay  DESC";
     $listtkdv=pdo_query($sql);
     return $listtkdv;
 }
@@ -19,5 +19,12 @@ function load_thongke_nv(){
     $sql.=" GROUP BY nhanvien.id ORDER BY nhanvien.id DESC";
     $listtknv=pdo_query($sql);
     return $listtknv;
+}
+function bieudodv() {
+    $sql="SELECT COUNT(datlich.id) AS countdl, dichvu.name AS name";
+    $sql.=" FROM datlich LEFT JOIN dichvu ON dichvu.id=datlich.id_dichvu";
+    $sql.=" GROUP BY dichvu.id ORDER BY dichvu.id DESC";
+    $listbddv=pdo_query($sql);
+    return $listbddv;
 }
 ?>

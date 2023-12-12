@@ -9,16 +9,17 @@
 
 
 
-  // Hàm chọn ca làm việc
-  function chonCa(selectedCa) {
-      // Lấy danh sách tất cả các ô ca làm việc
-      var cas = document.querySelectorAll('.ca');
+  function chonCa(caLabel) {
+    // Loại bỏ lớp 'chon' từ tất cả các "ca"
+    var cacCa = document.querySelectorAll('.ca-label');
+    cacCa.forEach(function (ca) {
+        ca.classList.remove('chon');
+    });
 
-      // Loại bỏ lớp 'chon' khỏi tất cả các ô ca
-      cas.forEach(function (ca) {
-          ca.classList.remove('chon');
-      });
+    // Thêm lớp 'chon' cho "ca" được chọn
+    caLabel.classList.add('chon');
+}
 
-      // Thêm lớp 'chon' cho ô ca được chọn
-      selectedCa.classList.add('chon');
-  }
+
+// Hiển thị menu con bên admin
+

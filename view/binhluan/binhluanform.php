@@ -4,19 +4,11 @@ session_start();
 
 include "../../model/pdo.php";
 include "../../model/binhluan.php";
-$idpro = $_REQUEST['idpro'];
+$idpro = intval($_REQUEST['idpro']); // Chuyển đổi thành số nguyên
 $dsbl = loadall_binhluan($idpro);
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/css.css">
-</head>
 <style>
     .mb {
         background-color: #f5f5f5;
@@ -26,6 +18,8 @@ $dsbl = loadall_binhluan($idpro);
     }
 
     .box_title {
+    
+ 
         color: goldenrod;
         font-size: 1.5em;
         font-weight: bold;
@@ -33,6 +27,11 @@ $dsbl = loadall_binhluan($idpro);
     }
 
     .box_content2 {
+        overflow-y: scroll;
+    white-space: nowrap;
+    scroll-snap-type: y mandatory;
+  width:100%;
+  height:200px;
         margin-bottom: 15px;
     }
 
@@ -116,7 +115,3 @@ $dsbl = loadall_binhluan($idpro);
     </div>
 
 
-
-</body>
-
-</html>

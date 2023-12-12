@@ -2,7 +2,7 @@
 </div>
 <script src="https://www.gstatic.com/charts/loader.js"></script>
 
-<script>
+<script> 
     google.charts.load('current', { 'packages': ['corechart'] });
     google.charts.setOnLoadCallback(drawChart);
 
@@ -17,7 +17,7 @@
                 foreach($listthongkenv as $thongke){
                     extract($thongke);
                     if($i==$tongloai) $dauphay=""; else $dauphay=",";
-                    echo "['".$thongke['tennv']."', ".$thongke['countnv']."]".$dauphay;
+                    echo "['".$thongke['tennv']."', ".$thongke['countdl']."]".$dauphay;
                     $i+=1;
                 }
             ?>

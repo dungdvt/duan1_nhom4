@@ -4,23 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chào mừng bạn đến 4` Barber</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <link rel="stylesheet" href="css/formbook.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div class="container">
-        <?php
-        // Kiểm tra xem có thông báo từ session hay không
-        if (isset($_SESSION['thongbao'])) {
-            // Hiển thị thông báo và sau đó xóa nó từ session để tránh hiển thị lại
-            echo '<script>alert("' . $_SESSION['thongbao'] . '");</script>';
-            unset($_SESSION['thongbao']);
-        }
-        ?>
-        <!-- HEADER -->
+<div class="container">
         <div class="header">
             <div class="logo">
                 <a href="index.php"><img src="image/dichvu/logo.png"></a>
@@ -61,11 +52,10 @@
             </script>
             <div class="row">
                 <div class="user-dropdown">
-                    <label for="" onclick="toggleOptions()">Xin chào <strong class="strong">
-                            <?=$name?>
+                    <label for="hello" onclick="toggleOptions()">Xin chào: <strong class="strong">
+                           <?=$name?>
                         </strong></label>
                     <div id="user-options" class="user-dropdown-content">
-                        <li><a href="index.php?act=quenmk">Quên mật khẩu</a></li>
                         <li><a href="index.php?act=sua">Sửa thông tin</a></li>
                         <?php if($role==1){ ?>
                         <li><a href="admin/index.php">Quản trị</a></li>
@@ -84,31 +74,5 @@
                 <a href="index.php?act=dangnhap">Đăng nhập</a>
                 <!-- <input type="submit" value="Đăng nhập" onclick="openLoginForm()"> -->
             </div>
-            <!-- Popup Đăng Nhập -->
-            <div class="overlay" id="overlay">
-                <div class="popup">
-                    <span class="close-btn" onclick="closeLoginForm()">&times;</span>
-                    <h2>Đăng Nhập</h2>
-                    <div class="login-container">
-                        <form action="index.php?act=dangnhap" method="post">
-                            <!-- Các trường đầu vào -->
-                            <input type="text" name="username" placeholder="Tên đăng nhập" required>
-                            <input type="password" name="password" placeholder="Mật khẩu" required>
-                            <!-- Nút đăng nhập -->
-                            <button type="submit" name="dangnhap">Đăng Nhập</button>
-
-                            <!-- Liên kết quên mật khẩu -->
-                            <a href="#">Quên mật khẩu?</a>
-                        </form>
-
-                        <div class="register-link">
-                            <p>Chưa có tài khoản? <a href="index.php?act=dangki">Đăng kí ngay</a></p>
-                        </div>
-
-                    </div>
-                    <?php }?>
-                </div>
-            </div>
+            <?php }?>
         </div>    
-     
-      

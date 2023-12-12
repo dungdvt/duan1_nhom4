@@ -1,14 +1,14 @@
 <?php
-
 include '../model/pdo.php';
 include 'header.php';
 include '../model/loai.php';
 include '../model/dichvu.php';
 include '../model/nhanvien.php';
 include '../model/thongke.php';
-include '../model/khachhang.php';
 include '../model/validate.php';
+include '../model/datlich.php';
 include '../model/binhluan.php';
+include '../model/khachhang.php';
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
@@ -25,11 +25,8 @@ if (isset($_GET['act'])) {
 
                     if (!$existingCategory) {
                         // Attempt to insert the category into the database
-                        if (insert_loai($tenloai)) {
-                            $thongbao = "Thêm thành công!";
-                        } else {
-                            $thongbao = "Thêm không thành công. vui lòng nhập lại";
-                        }
+                        insert_loai($tenloai);
+                        $thongbao = "Thêm thành công!";
                     } else {
                         $thongbao = "Tên loại dịch vụ đã tồn tại!";
                     }
@@ -47,7 +44,14 @@ if (isset($_GET['act'])) {
             break;
         case 'xoaloai':
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                delete_loai($_GET['id']);
+                $xoaloai = loadall_dichvu($kyw="", $_GET['id']); 
+                if(empty($xoaloai)) {
+                    delete_loai($_GET['id']);
+                }else{
+                    $thongbao = "Bạn không được phép xóa loại dịch vụ này!";
+                } 
+              
+
             }
             $listloai = loadall_loai();
             include 'loai/list.php';
@@ -80,7 +84,10 @@ if (isset($_GET['act'])) {
                 $target_dir = "../upload/";
                 $target_file = $target_dir . basename($_FILES['anh']['name']);
 
-                // Validate the service name
+
+
+             
+                      // Validate the service name
                 if (!empty($tendv)) {
                     // Check if the service already exists
                     $existingService = check_adddv($tendv);
@@ -100,8 +107,10 @@ if (isset($_GET['act'])) {
                 } else {
                     $thongbao = "Tên dịch vụ không được để trống!";
                 }
+             
             }
 
+            $listdichvu = loadall_dichvu($kyw="", $idloai=0);
             $listloai = loadall_loai();
             include 'dichvu/add.php';
             break;
@@ -119,7 +128,14 @@ if (isset($_GET['act'])) {
             break;
         case 'xoadv':
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                delete_dichvu($_GET['id']);
+                $xoadv = loadall_binhluan($_GET['id']);
+                $checkdl = loadall_datlich_dv($_GET['id']);
+                if(empty($xoadv) && empty($checkdl)) {
+                    delete_loai($_GET['id']);
+                }else{
+                    $thongbao = "Bạn không được phép xóa loại dịch vụ này!";
+                } 
+
             }
             $listdichvu = loadall_dichvu("", 0);
             include 'dichvu/list.php';
@@ -208,34 +224,6 @@ if (isset($_GET['act'])) {
             $listnv = pdo_query($sql);
             include 'nhanvien/list.php';
             break;
-
-            // khachhang
-        case 'addkhachhang':
-            // Check if the form is submitted
-            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
-                // Get the staff member's name from the form
-                $tenkhachhang = $_POST['tenkhachhang'];
-
-                // Validate the staff member's name
-                if (!empty($username)) {
-                    // Check if the staff member already exists
-                    $existingStaff = check_kh($username);
-
-                    if (!$existingStaff) {
-                        // Attempt to insert the staff member into the database
-                        insert_khachhang($name, $sodienthoai, $username, $password, $email);
-                        $thongbao = "Thêm khách hàng thành công!";
-                    } else {
-                        $thongbao = "Khách hàng đã tồn tại!";
-                    }
-                } else {
-                    $thongbao = "Tên Khách hàng k được để trống!";
-                }
-            }
-
-            // Load the add staff member form
-            include 'khachhang/add.php';
-            break;
         case 'listkhachhang':
             $listkhachhang = loadall_khachhang();
             include 'khachhang/list.php';
@@ -247,7 +235,12 @@ if (isset($_GET['act'])) {
             $listkhachhang = loadall_khachhang();
             include 'khachhang/list.php';
             break;
+        case 'qldl':
 
+            $listdatlich = loadname();
+            $listall = loadall_datlich();
+            include 'datlich/list.php';
+            break;
         case 'dsbl':
             $listbinhluan = loadall_binhluan(0);
             include "binhluan/list.php";
@@ -260,8 +253,6 @@ if (isset($_GET['act'])) {
             include 'binhluan/list.php';
             break;
 
-
-
         case 'thongke':
             $listthongke = loadall_thongke();
             include 'thongke/listloai.php';
@@ -272,6 +263,7 @@ if (isset($_GET['act'])) {
             break;
         case 'thongkenv':
             $listthongkenv = load_thongke_nv();
+            // $listca = loadall_ca();
             include 'thongke/listnv.php';
             break;
 
@@ -280,16 +272,13 @@ if (isset($_GET['act'])) {
             include 'thongke/bieudo.php';
             break;
         case 'bieudodv':
-            $listthongkedv = load_thongke_dv();
-            include 'thongke/bieudo.php';
+            $listbddv = bieudodv();
+            include 'thongke/bieudodv.php';
             break;
         case 'bieudonv':
             $listthongkenv = load_thongke_nv();
-            include 'thongke/bieudo.php';
+            include 'thongke/bieudonv.php';
             break;
-
-
-
         default:
 
             break;

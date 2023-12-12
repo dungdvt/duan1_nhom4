@@ -4,7 +4,7 @@
             <form action="" method="post" enctype="multipart/form-data">
             Loại <br>
                     <select name="idloai">
-                    
+                  
                         <?php
                     foreach($listloai as $loai){
                         extract($loai);

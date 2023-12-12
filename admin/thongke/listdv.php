@@ -5,20 +5,20 @@
                             <th>Mã dịch vụ</th>
                             <th>Tên dịch vụ</th>
                             <th>Số lượng đặt</th>
-                            <th>Giá cao nhất</th>
-                            <th>Giá thấp nhất</th>
-                            <th>Giá trung bình</th>
+                            <th>Ca </th>
+                            <th>Ngày</th>
+                            
                         </tr>
                         <?php
-                        foreach($listthongke as $thongke){
+                        foreach($listthongkedv as $thongke){
                             extract($thongke);
                             echo '<tr>
                                     <td>'.$madv.'</td>
                                     <td>'.$tendv.'</td>
                                     <td>'.$countdl.'</td>
-                                    <td>'.$maxprice.'</td>
-                                    <td>'.$minprice.'</td>
-                                    <td>'.$avgprice.'</td>
+                                    <td>'.$cadv.'</td>
+                                    <td>'.$ngay.'</td>
+                                  
                                 </tr>';
                         }
                         ?>

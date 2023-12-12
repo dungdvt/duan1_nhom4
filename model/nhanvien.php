@@ -21,4 +21,13 @@ function update_nhanvien($id, $tennv){
     $sql = "UPDATE nhanvien SET name='$tennv' WHERE id=".$id;
     pdo_execute($sql);
 }
+function check_nhanvien($id_ca, $id_nhanvien, $ngay){
+    $sql = "SELECT nhanvien.id, nhanvien.name, ca.name AS ca_ten 
+    FROM datlich 
+    INNER JOIN nhanvien ON datlich.id_nhanvien = nhanvien.id 
+    INNER JOIN ca ON datlich.id_ca = ca.id 
+    WHERE datlich.id_ca = $id_ca AND DATE(datlich.ngay) = '$ngay' AND datlich.id_nhanvien = $id_nhanvien";
+    $checknv = pdo_query($sql);
+    return $checknv;
+}
 ?>
