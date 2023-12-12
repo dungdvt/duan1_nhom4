@@ -32,12 +32,6 @@
                             <td>'.$nhanvien_name.'</td>
                             <td>'.$dichvu_name.'</td>
                             <td>'.$ngay.'</td>
-                            
-                            
-                            <td>
-                            <a href="'.$suaqldl.'"><input type="button" name="" class="btn" value="Sửa"></a>
-                            <a href="'.$xoaqldl.'"><input type="button" name="" class="btn" value="Xóa"  onclick="return confirm(\'Ban co chac la muon xoa khong?\')"></a>
-                        </td>
                         </tr>';
                         }
                         

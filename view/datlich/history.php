@@ -1,6 +1,7 @@
 <main>
             <div class="history-table">
-            <h1>Lịch sử đặt lịch</h1>
+            <h1 style="color: #3498db;">Lịch sử đặt lịch</h1>
+            <br>
             <table class="table lichsu" border="1">
             <tr>
                 <th>STT</th>

@@ -260,6 +260,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
 
         case 'datlich':
+       
             $isLoggedIn = isset($_SESSION['username']);
             if ($isLoggedIn) {
                 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['datlich'])) {
@@ -268,8 +269,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $id_ca = $_POST['id_ca'];
                     $id_nhanvien = $_POST['id_nhanvien'];
                     $id_dichvu = $_POST['id_dichvu'];
-                    $ngay = $_POST['ngay'];
-
+                    $ngay = ($_POST['ngay']);
                     if (empty($id_dichvu) || empty($ngay) || empty($id_nhanvien) || empty($id_ca)) {
                         echo '<script>
                                 var overlay = document.createElement("div");
@@ -302,6 +302,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                                 overlay.appendChild(popup);
                                 document.body.appendChild(overlay);
                              </script>';
+                            
                     } else {
                         $checkNv = check_nhanvien($id_ca, $id_nhanvien, $ngay);
                         if (empty($checkNv)) {
@@ -372,8 +373,9 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                             overlay.appendChild(popup);
                             document.body.appendChild(overlay);
                         </script>';
-                        }
+                        } 
                     }
+                
                 }else{
                     echo '<script>
                     var overlay = document.createElement("div");

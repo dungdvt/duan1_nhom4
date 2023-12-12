@@ -241,16 +241,33 @@ include '../model/khachhang.php';
                                                   break; 
                             
                                         case 'thongke':
-                                            $listthongke=loadall_thongke(); 
-                                            include 'thongke/list.php';
+                                            $listthongke = loadall_thongke();
+                                            include 'thongke/listloai.php';
                                             break;
+                                        case 'thongkedv':
+                                            $listthongkedv = load_thongke_dv();
+                                            include 'thongke/listdv.php';
+                                            break;
+                                        case 'thongkenv':
+                                            $listthongkenv = load_thongke_nv();
+                                            include 'thongke/listnv.php';
+                                            break;
+
                                         case 'bieudo':
-                                            $listthongke=loadall_thongke(); 
+                                            $listthongke = loadall_thongke();
                                             include 'thongke/bieudo.php';
                                             break;
-        default:
+                                        case 'bieudodv':
+                                            $listthongkedv = load_thongke_dv();
+                                            include 'thongke/bieudodv.php';
+                                            break;
+                                        case 'bieudonv':
+                                            $listthongkenv = load_thongke_nv();
+                                            include 'thongke/bieudonv.php';
+                                            break;
+                                        default:
 
-        break;
+                                        break;
 
         }
     } else{

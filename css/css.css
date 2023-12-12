@@ -8,7 +8,9 @@ body {
     font-family: Arial, sans-serif;
     
 }
-
+.{
+color: #ccc;
+}
 .container {
     font-family: segoe ui,sans-serif;
     max-width:1280px;

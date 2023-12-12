@@ -69,13 +69,10 @@ h1{
     border-bottom: 1px solid ;
     padding: 20px 0;
 }
-
 .menu ul li a {
     text-decoration: none;
     color: #fff;
     margin-left: 20px;
-    
-   
 }
 .menu ul li:hover {
     cursor: pointer;
@@ -83,7 +80,35 @@ h1{
     color: #fff;
 }
 
-
+.has-arrow .sub-menu {
+    display: none;
+    margin-left: 40px;
+    overflow: hidden;
+    
+    transition: 0.3s ease-in-out;
+}
+.has-arrow .sub-menu li{
+   border: none;
+   list-style: initial;
+  
+}
+.has-arrow .sub-menu li:hover{
+    background-color: #ccc;
+}
+.has-arrow.active .sub-menu {
+    display: block;
+    max-height: 200px; /* Điều chỉnh giá trị max-height tùy theo nhu cầu */
+    margin-top: 10px; /* Khoảng cách đều nhau từ trên xuống */
+    transition: 0.3s ease-in-out, 0.3s ease-in-out;
+}
+.caret-icon {
+    margin-left: 200px; /* Khoảng cách giữa biểu tượng caret và nội dung "Thống kê" */
+}
+.fa-circle-dot{
+    font-size: 10px;
+    margin-right: 5px;
+    
+}
 .boxright {
     flex: 1;
     padding: 20px;
